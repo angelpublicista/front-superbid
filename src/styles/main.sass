@@ -1,2 +1,71 @@
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss"
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap')
+@import "~aos/src/sass/aos.scss"
+
+/*Edit Bootstrap Variables*/
+$primary: #EA6012
+$secondary: #01499F
+
 @import "~bootstrap/scss/bootstrap"
+
+/*Custom sass*/
+@import "general-styles"
+
+/*Mixins*/
+@import "mixins"
+
+
+.sb-header
+    .nav-link
+        color: white
+        &:hover
+            color: $primary !important
+
+h1
+    @include titleHead($color: #fff, $t-transform: uppercase)
+    font-size: 2.5em
+
+.sb-intro
+    .sb-desc
+        color: white
+        opacity: .9
+        font-size: 1.1em
+    .sb-down
+        bottom: -20px
+        .button-down
+            width: 50px
+            height: 50px
+            background: $primary
+            color: white
+            font-size: 1.5em
+            line-height: 0
+
+.sb-box-instruct
+    background-color: rgba(#000, .2)
+    color: white
+    h3
+        font-weight: bold
+    .sb-info
+        color: $primary
+        font-size: 2em
+    .sb-divider
+        border: 1px solid rgba(#fff, .2)
+
+.sb-action-buttons
+    button
+        border: none
+        background-color: transparent
+        outline: 0px
+
+.sb-top-footer
+    .nav-link
+        color: white
+        &:hover
+            color: $primary
+
+.sb-bottom-footer
+    background-color: black
+    color: white
+    p
+        opacity: .7
+        font-size: .8em
