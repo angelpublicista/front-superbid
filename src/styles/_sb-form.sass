@@ -1,0 +1,13 @@
+.sb-form
+    &-header
+        .sb-progressbar
+            display: flex
+            list-style: none
+            margin-bottom: 2em
+            counter-reset: step
+            margin-bottom: 4em
+            &-option
+                &::before
+                    display: flex
+                    content: counter(step)
+                    counter-increment: step
