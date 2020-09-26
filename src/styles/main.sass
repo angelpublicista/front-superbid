@@ -1,18 +1,26 @@
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss"
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap')
 @import "~aos/src/sass/aos.scss"
-
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts'
+@import '~@fortawesome/fontawesome-free/scss/fontawesome'
+@import '~@fortawesome/fontawesome-free/scss/solid'
+@import '~@fortawesome/fontawesome-free/scss/regular'
 /*Edit Bootstrap Variables*/
 $primary: #EA6012
 $secondary: #01499F
+$success: #019F79
 
 @import "~bootstrap/scss/bootstrap"
 
-/*Custom sass*/
-@import "general-styles"
-
 /*Mixins*/
 @import "mixins"
+
+/*Custom sass*/
+@import "general-styles"
+@import "sb-form"
+
+
+
 
 
 .sb-header

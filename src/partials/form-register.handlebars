@@ -1,15 +1,83 @@
 <form action="" class="sb-form" id="form-register">
     <div class="sb-form-header">
-        <ul class="sb-progressbar nav justify-content-center">
+        <ul class="sb-progressbar nav justify-content-around">
             <li class="nav-item sb-progressbar-option active active"></li>
             <li class="nav-item sb-progressbar-option"></li>
             <li class="nav-item sb-progressbar-option"></li>
         </ul>
     </div>
 
-    <div class="sb-form-register-body">
-        <div class="step active">
-            <input type="text" placeholder="Nombre">
+    {{!-- STEP 1 --}}
+    <div class="step active mt-5">
+        <div class="step-header text-center">
+            <h3 class="sb-title-header">INFORMACIÓN GENERAL</h3>
+            <hr class="sb-sub-divider">
+            <p class="sb-subtitle-header">Rellene los campos a continuación</p>
+        </div>
+        <div class="sb-step-body mt-5">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label for="rg-tipo-doc">Tipo de documento</label>
+                        <select name="rg-tipo-doc" id="rg-tipo-doc" class="form-control custom-select">
+                            <option value="">Selecciona una opción</option>
+                            <option value="">Selecciona una opción</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label for="rg-num-doc">Número de documento</label>
+                        <input type="number" name="rg-num-doc" id="rg-num-doc" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="rg-tipo-persona">Tipo de persona</label>
+                        <select name="rg-tipo-persona" id="rg-tipo-persona" class="form-control custom-select">
+                            <option value="">Selecciona una opción</option>
+                            <option value="">Selecciona una opción</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sb-step-footer text-right mt-4">
+            <button type="button" class="step-button step-button-next btn btn-primary rounded-pill" data-to_step="2"
+                data-step="1">Siguiente</button>
+        </div>
+    </div>
+
+    {{!-- STEP 2 --}}
+    <div class="step active mt-5">
+        <div class="step-header text-center">
+            <h3 class="sb-title-header">TIPO DE DOCUMENTOS</h3>
+            <hr class="sb-sub-divider">
+            <p class="sb-subtitle-header">Seleccione los documentos que desea <b>cargar</b></p>
+        </div>
+        <div class="sb-step-body mt-5 sb-opt-files">
+            <div class="row text-center">
+                <div class="col-6 col-md-3">
+                    <i class="far fa-file-alt"></i>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="far fa-file-alt"></i>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="far fa-file-alt"></i>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="far fa-file-alt"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="sb-step-footer d-flex justify-content-between mt-4">
+            <button type="button" class="step-button step-button-back btn btn-primary rounded-pill" data-to_step="1" data-step="2">Anterior</button>
+            <button type="button" class="step-button step-button-next btn btn-primary rounded-pill" data-to_step="2" data-step="1">Siguiente</button>
         </div>
     </div>
 </form>
