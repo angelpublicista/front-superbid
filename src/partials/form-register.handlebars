@@ -52,7 +52,7 @@
     </div>
 
     {{!-- STEP 2 --}}
-    <div class="step active mt-5">
+    <div class="step mt-5">
         <div class="step-header text-center">
             <h3 class="sb-title-header">TIPO DE DOCUMENTOS</h3>
             <hr class="sb-sub-divider">
@@ -61,21 +61,87 @@
         <div class="sb-step-body mt-5 sb-opt-files">
             <div class="row text-center">
                 <div class="col-6 col-md-3">
-                    <i class="far fa-file-alt"></i>
+                    <button class="button-file active" data-toggle="tooltip" data-placement="bottom" data-html="true" title="
+                        <ul class='nav flex-column'>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                        </ul>">
+                        <span class="sb-button-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <i class="far fa-file-alt"></i>
+                        <span class="sb-button-text">Registro</span>
+                    </button>
                 </div>
                 <div class="col-6 col-md-3">
-                    <i class="far fa-file-alt"></i>
+                    <button class="button-file" data-toggle="tooltip" data-placement="bottom" data-html="true" title="
+                        <ul class='nav flex-column'>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                        </ul>">
+                        <span class="sb-button-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <i class="far fa-file-alt"></i>
+                        <span class="sb-button-text">Pagos</span>
+                    </button>
                 </div>
                 <div class="col-6 col-md-3">
-                    <i class="far fa-file-alt"></i>
+                    <button class="button-file" data-toggle="tooltip" data-placement="bottom" data-html="true" title="
+                        <ul class='nav flex-column'>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                        </ul>">
+                        <i class="far fa-file-alt"></i>
+                        <span class="sb-button-text">Garantía</span>
+                    </button>
                 </div>
                 <div class="col-6 col-md-3">
-                    <i class="far fa-file-alt"></i>
+                    <button class="button-file" data-toggle="tooltip" data-placement="bottom" data-html="true" title="
+                        <ul class='nav flex-column'>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                            <li class='nav-item'>- Tooltip on bottom</li>
+                        </ul>">
+                        <i class="far fa-file-alt"></i>
+                        <span class="sb-button-text">Retiros</span>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <div class="sb-step-footer d-flex justify-content-between mt-4">
+        <div class="sb-step-footer d-flex justify-content-between mt-5">
+            <button type="button" class="step-button step-button-back btn btn-primary rounded-pill" data-to_step="1" data-step="2">Anterior</button>
+            <button type="button" class="step-button step-button-next btn btn-primary rounded-pill" data-to_step="2" data-step="1">Siguiente</button>
+        </div>
+    </div>
+
+    {{!-- STEP 3 --}}
+    <div class="step mt-5">
+        <div class="step-header text-center">
+            <h3 class="sb-title-header">CARGA DE DOCUMENTOS</h3>
+            <hr class="sb-sub-divider">
+            <p class="sb-subtitle-header">A continuación arrastre o seleccione los archivos que desea <b>cargar</b></p>
+        </div>
+        <div class="sb-step-body mt-5 sb-ind-files">
+            <div id="sb-docs-registro">
+                <div class="row text-center">
+                    <div class="col-6 col-md-2">
+                        <input type="file" name="rg-file-cedula" id="rg-file-cedula">
+                        <label for="rg-file-cedula">Cédula</label>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <input type="file" name="rg-file-cedula" id="rg-file-rut">
+                        <label for="rg-file-cedula">RUT (opcional)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sb-step-footer d-flex justify-content-between mt-5">
             <button type="button" class="step-button step-button-back btn btn-primary rounded-pill" data-to_step="1" data-step="2">Anterior</button>
             <button type="button" class="step-button step-button-next btn btn-primary rounded-pill" data-to_step="2" data-step="1">Siguiente</button>
         </div>
