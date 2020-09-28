@@ -7,155 +7,346 @@
         </ul>
     </div>
 
-    {{!-- STEP 1 --}}
-    <div class="step active mt-5">
-        <div class="step-header text-center">
-            <h3 class="sb-title-header">INFORMACIÓN GENERAL</h3>
-            <hr class="sb-sub-divider">
-            <p class="sb-subtitle-header">Rellene los campos a continuación</p>
-        </div>
-        <div class="sb-step-body mt-5">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group">
-                        <label for="rg-tipo-doc">Tipo de documento</label>
-                        <select name="rg-tipo-doc" id="rg-tipo-doc" class="form-control custom-select">
-                            <option value="">Selecciona una opción</option>
-                            <option value="">Selecciona una opción</option>
-                        </select>
+    <div class="sb-form-body d-flex">
+        {{!-- STEP 1 --}}
+        <div class="step active mt-5" id="step-1">
+            <div class="step-header text-center">
+                <h3 class="sb-title-header">INFORMACIÓN GENERAL</h3>
+                <hr class="sb-sub-divider">
+                <p class="sb-subtitle-header">Rellene los campos a continuación</p>
+            </div>
+            <div class="sb-step-body mt-5">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label for="rg-tipo-doc">Tipo de documento</label>
+                            <select name="rg-tipo-doc" id="rg-tipo-doc" class="form-control custom-select">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="cedula-ciudadania">Cédula de ciudadanía</option>
+                                <option value="nit">NIT</option>
+                                <option value="cedula-extranjeria">Cédula de extranjería</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="form-group">
-                        <label for="rg-num-doc">Número de documento</label>
-                        <input type="number" name="rg-num-doc" id="rg-num-doc" class="form-control">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label for="rg-num-doc">Número de documento</label>
+                            <input type="number" name="rg-num-doc" id="rg-num-doc" class="form-control">
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-12">
-                    <div class="form-group">
-                        <label for="rg-tipo-persona">Tipo de persona</label>
-                        <select name="rg-tipo-persona" id="rg-tipo-persona" class="form-control custom-select">
-                            <option value="">Selecciona una opción</option>
-                            <option value="">Selecciona una opción</option>
-                        </select>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="rg-tipo-persona">Tipo de persona</label>
+                            <select name="rg-tipo-persona" id="rg-tipo-persona" class="form-control custom-select">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="p-natural">Natural</option>
+                                <option value="p-juridica">Jurídica</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="sb-step-footer text-right mt-4">
-            <button type="button" class="step-button step-button-next btn btn-primary rounded-pill" data-to_step="2"
-                data-step="1">Siguiente</button>
-        </div>
-    </div>
-
-    {{!-- STEP 2 --}}
-    <div class="step mt-5">
-        <div class="step-header text-center">
-            <h3 class="sb-title-header">TIPO DE DOCUMENTOS</h3>
-            <hr class="sb-sub-divider">
-            <p class="sb-subtitle-header">Seleccione los documentos que desea <b>cargar</b></p>
-        </div>
-        <div class="sb-step-body mt-5 sb-opt-files">
-            <div class="row text-center">
-                <div class="col-6 col-md-3">
-                    <button class="button-file active" data-toggle="tooltip" data-placement="bottom" data-html="true" title="
-                        <ul class='nav flex-column'>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                        </ul>">
-                        <span class="sb-button-check">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <i class="far fa-file-alt"></i>
-                        <span class="sb-button-text">Registro</span>
-                    </button>
-                </div>
-                <div class="col-6 col-md-3">
-                    <button class="button-file" data-toggle="tooltip" data-placement="bottom" data-html="true" title="
-                        <ul class='nav flex-column'>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                        </ul>">
-                        <span class="sb-button-check">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <i class="far fa-file-alt"></i>
-                        <span class="sb-button-text">Pagos</span>
-                    </button>
-                </div>
-                <div class="col-6 col-md-3">
-                    <button class="button-file" data-toggle="tooltip" data-placement="bottom" data-html="true" title="
-                        <ul class='nav flex-column'>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                        </ul>">
-                        <i class="far fa-file-alt"></i>
-                        <span class="sb-button-text">Garantía</span>
-                    </button>
-                </div>
-                <div class="col-6 col-md-3">
-                    <button class="button-file" data-toggle="tooltip" data-placement="bottom" data-html="true" title="
-                        <ul class='nav flex-column'>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                            <li class='nav-item'>- Tooltip on bottom</li>
-                        </ul>">
-                        <i class="far fa-file-alt"></i>
-                        <span class="sb-button-text">Retiros</span>
-                    </button>
-                </div>
+            <div class="sb-step-footer text-right mt-4">
+                <button type="button" class="step-button step-button-next btn btn-primary rounded-pill" data-to_step="2"
+                    data-step="1">Siguiente</button>
             </div>
         </div>
 
-        <div class="sb-step-footer d-flex justify-content-between mt-5">
-            <button type="button" class="step-button step-button-back btn btn-primary rounded-pill" data-to_step="1" data-step="2">Anterior</button>
-            <button type="button" class="step-button step-button-next btn btn-primary rounded-pill" data-to_step="2" data-step="1">Siguiente</button>
-        </div>
-    </div>
-
-    {{!-- STEP 3 --}}
-    <div class="step mt-5">
-        <div class="step-header text-center">
-            <h3 class="sb-title-header">CARGA DE DOCUMENTOS</h3>
-            <hr class="sb-sub-divider">
-            <p class="sb-subtitle-header">A continuación arrastre o seleccione los archivos que desea <b>cargar</b></p>
-        </div>
-        <div class="sb-step-body mt-5 sb-ind-files">
-            <div id="sb-docs">
+        {{!-- STEP 2 --}}
+        <div class="step mt-5" id="step-2">
+            <div class="step-header text-center">
+                <h3 class="sb-title-header">TIPO DE DOCUMENTOS</h3>
+                <hr class="sb-sub-divider">
+                <p class="sb-subtitle-header">Seleccione los documentos que desea <b>cargar</b></p>
+            </div>
+            <div class="sb-step-body mt-5 sb-opt-files">
                 <div class="row text-center">
                     <div class="col-6 col-md-3">
-                        <div class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
-                            <input type="file" name="rg-file-cedula" id="rg-file-cedula" class="sb-input-file">
-                            <span class="icon-file d-flex justify-content-center align-items-center flex-column">
-                                <i class="fas fa-file"></i>
+                        <button class="button-file active" data-toggle="tooltip" data-placement="bottom"
+                            data-html="true" title="
+                        <ul class='nav flex-column'>
+                            <li class='nav-item'>- Cédula</li>
+                            <li class='nav-item'>- RUT</li>
+                            <li class='nav-item'>- Cámara de comercio</li>
+                        </ul>">
+                            <span class="sb-button-check">
+                                <i class="fas fa-check"></i>
                             </span>
-                            <div class="my-1"></div>
-                            <label for="rg-file-cedula">Cédula</label>
-                        </div>
+                            <i class="far fa-file-alt"></i>
+                            <span class="sb-button-text">Registro</span>
+                        </button>
                     </div>
                     <div class="col-6 col-md-3">
-                        <div class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
-                            <input type="file" name="rg-file-cedula" id="rg-file-rut" class="sb-input-file">
-                            <span class="icon-file d-flex justify-content-center align-items-center flex-column">
-                                <i class="fas fa-file"></i>
+                        <button class="button-file" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                            title="
+                        <ul class='nav flex-column'>
+                            <li class='nav-item'>- Carta de tercero</li>
+                            <li class='nav-item'>- Soporte pago lote</li>
+                            <li class='nav-item'>- Soporte pago comisión</li>
+                            <li class='nav-item'>- Soporte pago traspasos</li>
+                            <li class='nav-item'>- Soporte pago fianza</li>
+                        </ul>">
+                            <span class="sb-button-check">
+                                <i class="fas fa-check"></i>
                             </span>
-                            <div class="my-1"></div>
-                            <label for="rg-file-cedula">RUT (opcional)</label>
-                        </div>
+                            <i class="far fa-file-alt"></i>
+                            <span class="sb-button-text">Pagos</span>
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <button class="button-file" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                            title="
+                        <ul class='nav flex-column'>
+                            <li class='nav-item'>- Soporte garantía</li>
+                            <li class='nav-item'>- Certificación bancaria</li>
+                            <li class='nav-item'>- Documentos garantías</li>
+                        </ul>">
+                            <i class="far fa-file-alt"></i>
+                            <span class="sb-button-text">Garantía</span>
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <button class="button-file" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                            title="
+                        <ul class='nav flex-column'>
+                            <li class='nav-item'>- Plantilla de aportes</li>
+                            <li class='nav-item'>- Poliza</li>
+                            <li class='nav-item'>- RTM</li>
+                            <li class='nav-item'>- SOAT</li>
+                        </ul>">
+                            <i class="far fa-file-alt"></i>
+                            <span class="sb-button-text">Retiros</span>
+                        </button>
                     </div>
                 </div>
             </div>
+
+            <div class="sb-step-footer d-flex justify-content-between mt-5">
+                <button type="button" class="step-button step-button-back btn btn-outline-primary rounded-pill"
+                    data-to_step="1" data-step="2">Anterior</button>
+                <button type="button" class="step-button step-button-next btn btn-primary rounded-pill" data-to_step="3"
+                    data-step="2">Siguiente</button>
+            </div>
         </div>
 
-        <div class="sb-step-footer d-flex justify-content-between mt-5">
-            <button type="button" class="step-button step-button-back btn btn-primary rounded-pill" data-to_step="1" data-step="2">Anterior</button>
-            <button type="button" class="step-button step-button-next btn btn-primary rounded-pill" data-to_step="2" data-step="1">Siguiente</button>
+        {{!-- STEP 3 --}}
+        <div class="step mt-5" id="step-3">
+            <div class="step-header text-center">
+                <h3 class="sb-title-header">CARGA DE DOCUMENTOS</h3>
+                <hr class="sb-sub-divider">
+                <p class="sb-subtitle-header">A continuación arrastre o seleccione los archivos que desea <b>cargar</b>
+                </p>
+            </div>
+            <div class="sb-step-body mt-5 sb-ind-files">
+                {{!-- Documentos de retiro --}}
+                <div id="sb-docs-registro" class="sb-docs my-5">
+                    <h5 class="sb-title-head-docs">- Documentos de registro - <span
+                            class="sb-title-tipo-persona">Persona Natural</span></h5>
+                    <div class="row text-center">
+                        <div class="col-6 col-md-3">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-cedula" id="rg-file-cedula" class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-cedula">Cédula</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-cedula" id="rg-file-rut" class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-cedula">RUT (opcional)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Documentos de pago --}}
+                <div id="sb-docs-pagos" class="sb-docs my-5">
+                    <h5 class="sb-title-head-docs">- Documentos de Pagos</h5>
+                    <div class="row text-center">
+                        <div class="col-12 mt-3">
+                            <div class="form-group text-left">
+                                <label for="rg-nom-subasta" class="text-left">Nombre de la subasta</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-carta-tercero" id="rg-file-carta-tercero"
+                                    class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-carta-tercero">Carta de tercero</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-soporte-pago-lote" id="rg-file-soporte-pago-lote"
+                                    class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-soporte-pago-lote">Soporte pago lote</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-soporte-pago-comision"
+                                    id="rg-file-soporte-pago-comision" class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-soporte-pago-comision">Soporte pago comisión</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-soporte-pago-traspasos"
+                                    id="rg-file-soporte-pago-traspasos" class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-soporte-pago-traspasos">Soporte pago traspasos</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-soporte-pago-fianza" id="rg-file-soporte-pago-fianza"
+                                    class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-soporte-pago-fianza">Soporte pago fianza</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Comprobantes garantía --}}
+                <div id="sb-docs-comprobante-garantia" class="sb-docs my-5">
+                    <h5 class="sb-title-head-docs">- Comprobante garantía</h5>
+                    <div class="row text-center">
+                        <div class="col-6 col-md-3">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-soporte-garantia" id="rg-file-soporte-garantia"
+                                    class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-soporte-garantia">Soporte garantía</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-cert-bancaria" id="rg-file-cert-bancaria"
+                                    class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-cert-bancaria">Certificación bancaria (opcional)</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-docs-garantias" id="rg-file-docs-garantias"
+                                    class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-docs-garantias">Documentos garantías</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Documentos de retiro --}}
+                <div id="sb-docs-retiro" class="sb-docs my-5">
+                    <h5 class="sb-title-head-docs">- Documentos de retiro</h5>
+                    <div class="row text-center">
+                        <div class="col-6 col-md-3">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-plantilla-aportes" id="rg-file-plantilla-aportes"
+                                    class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-plantilla-aportes">Plantilla de aportes</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-poliza" id="rg-file-poliza" class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-poliza">Poliza</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-rtm" id="rg-file-rtm" class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-rtm">RTM</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div
+                                class="form-group sb-group-file d-flex justify-content-center align-items-center flex-column">
+                                <input type="file" name="rg-file-soat" id="rg-file-soat" class="sb-input-file">
+                                <span class="icon-file d-flex justify-content-center align-items-center flex-column">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <div class="my-1"></div>
+                                <label for="rg-file-soat">SOAT</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sb-step-footer d-flex justify-content-between mt-5">
+                <button type="button" class="step-button step-button-back btn btn-outline-primary rounded-pill"
+                    data-to_step="2" data-step="3">Anterior</button>
+                <button type="submit" class="step-button step-button-next btn btn-primary rounded-pill"
+                    data-step="3">Enviar</button>
+            </div>
         </div>
     </div>
 </form>

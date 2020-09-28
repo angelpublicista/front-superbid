@@ -1,7 +1,19 @@
 .sb-action-form
     background-color: #F8F8F8
+    .step
+        min-width: 100%
+        opacity: 0
+        &.active
+            opacity: 1
+        &.to-left
+            margin-left: -100%
+        &.inactive
+            animation-name: scale
+            animation-duration: .2s
+            animation-direction: alternate
+            animation-iteration-count: 2
     .box-form
-        max-width: 700px
+        max-width: 1000px
         margin: auto
 
 .sb-form
@@ -38,6 +50,10 @@
                     border-color: $success
                     color: #fff
                     background-color: $success
+    &-body
+        overflow: hidden
+        .step
+            min-width: 100%
     .sb-title-header
         color: $secondary
         font-weight: bold
@@ -110,7 +126,7 @@
         left: 0
         margin: auto
         width: 90%
-        margin-left: 5px
+        margin-left: 12px
         z-index: -1
         color: #979797
         border: 1px dashed #979797
@@ -123,3 +139,17 @@
     &:hover .icon-file
         color: $secondary
         border-color: $secondary
+
+.sb-docs
+    .sb-title-head-docs
+        color: $secondary
+        font-size: 1em
+        font-weight: bold
+        margin: 0
+        margin-bottom: 1em
+
+@keyframes scale
+  from
+    transform: scale(1)
+  to
+    transform: scale(1.1)
