@@ -1,28 +1,33 @@
-export const formReg = () => {
-    let form = document.querySelector('#form-register');
-    let progressOptions = document.querySelectorAll('.progressbar-option');
+import progressBar from './../helpers/ProgressBar';
+import Campos from '../helpers/Campos';
+import optionFiles from './../helpers/OptionsFiles';
+import { isActive } from './../helpers/Validation';
 
-    form.addEventListener('click', function (e) {
-        let element = e.target;
-        let isButtonNext = element.classList.contains('step-button-next');
-        let isButtonBack = element.classList.contains('step-button-back');
-        if (isButtonNext || isButtonBack) {
-            let currentStep = document.getElementById('step-' + element.dataset.step);
-            let jumpStep = document.getElementById('step-' + element.dataset.to_step);
-            currentStep.addEventListener('animationend', function callback() {
-                currentStep.classList.remove('active');
-                jumpStep.classList.add('active');
-                if (isButtonNext) {
-                    currentStep.classList.add('to-left');
-                    progressOptions[element.dataset.to_step - 1].classList.add('active');
-                } else {
-                    jumpStep.classList.remove('to-left');
-                    progressOptions[element.dataset.step - 1].classList.remove('active');
-                }
-                currentStep.removeEventListener('animationend', callback);
-            });
-            currentStep.classList.add('inactive');
-            jumpStep.classList.remove('inactive');
-        }
-    });
+const formReg = () => {
+    progressBar('#form-register');
+    optionFiles('.button-file');
+    
+    
+    let form_reg = document.querySelector('#form-register');
+    const buttons_opt = form_reg.querySelectorAll('.button-file');
+
+    
+
+    for (const button of buttons_opt) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            let id_button = button.getAttribute('id');
+            let campos_activar = button.dataset.active;
+            let formCampos = new Campos('.sb-ind-files', `${campos_activar}`);
+            if(isActive(`#${id_button}`)){
+                formCampos.crearCampos();
+            } else {
+                formCampos.borrarCampos();
+            }
+        })
+    }
+    
+    
 }
+
+export default formReg;

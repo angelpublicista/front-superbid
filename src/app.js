@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import AOS from 'aos';
 
 //Modules
-import { formReg } from "./modules/FormReg";
+import formReg from "./modules/FormReg";
 
 // Styles
 import "./styles/main.sass";
