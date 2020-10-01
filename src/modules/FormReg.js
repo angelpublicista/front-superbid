@@ -48,13 +48,14 @@ const formReg = () => {
                 alerts2.innerHTML = "";
             } else {
                 buttonDisabled("#step-2",".next-step");
-                
-                buttonNext2.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alerts2.innerHTML = `<div class="alert alert-danger text-left" role="alert">
-                        Por favor seleccione al menos un tipo de documento
-                    </div>`;
-                })
+                if (!isActiveAll('#step-2', '.button-file')) {
+                    buttonNext2.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        alerts2.innerHTML = `<div class="alert alert-danger text-left" role="alert">
+                            Por favor seleccione al menos un tipo de documento
+                        </div>`;
+                    })   
+                }
             }
             
             let id_button = button.getAttribute('id');

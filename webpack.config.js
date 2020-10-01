@@ -25,6 +25,11 @@ module.exports = {
             template: './src/index.handlebars'
         }),
 
+        new HtmlWebpackPlugin({
+            filename: 'gracias.html',
+            template: './src/gracias.handlebars'
+        }),
+
         // new HtmlWebpackPlugin({
         //     filename: 'blog.html',
         //     template: './src/templates/blog.handlebars'

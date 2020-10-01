@@ -6,22 +6,7 @@
     <title>Actualización documentos | Superbid</title>
 </head>
 <body>
-    <header class="sb-header py-4 fixed-top bg-secondary">
-        <div class="container">
-            <div class="d-flex justify-content-between">
-                <div class="sb-nav-brand">
-                    <img src="./static/logo-superbid.svg" alt="" class="img-fluid">
-                </div>
-                <div class="sb-nav-menu">
-                    <ul class="nav justify-content-center mt-3">
-                        <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-phone-alt"></i> 1-7438088</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-mobile-alt"></i> 310 707 8989</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-envelope"></i> subastas@superbid.com.co</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
+    {{>partials/header}}
     <main class="sb-main">
         <section class="sb-intro py-5 bg-secondary vh-100 position-relative">
             <div class="container mt-5">
@@ -72,20 +57,6 @@
         </section>
     </main>
 
-    <footer class="text-center sb-footer">
-        <div class="sb-top-footer py-5 bg-dark text-light">
-            <div class="container">
-                <img src="./static/logo-superbid.svg" alt="" class="img-fluid">
-                <ul class="nav justify-content-center mt-3">
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-phone-alt"></i> 1-7438088</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-mobile-alt"></i> 310 707 8989</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-envelope"></i> subastas@superbid.com.co</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="sb-bottom-footer py-3">
-            <p class="m-0">SUPERBID 2020 | Todos los derechos reservados</p>
-        </div>
-    </footer>
+    {{>partials/footer}}
 </body>
 </html>
