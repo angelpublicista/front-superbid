@@ -9,6 +9,10 @@ const progressBar = (formulario) => {
         if (isButtonNext || isButtonBack) {
             let currentStep = document.getElementById('step-' + element.dataset.step);
             let jumpStep = document.getElementById('step-' + element.dataset.to_step);
+            
+            let id_step = currentStep.getAttribute('id');
+
+            
             currentStep.addEventListener('animationend', function callback() {
                 currentStep.classList.remove('active');
                 jumpStep.classList.add('active');
