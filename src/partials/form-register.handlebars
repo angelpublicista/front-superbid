@@ -32,7 +32,7 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="rg-num-doc">Número de documento</label>
-                            <input type="number" name="rg-num-doc" id="rg-num-doc" class="form-control input-required">
+                            <input type="text" name="rg-num-doc" id="rg-num-doc" class="form-control input-required">
                         </div>
                     </div>
 
@@ -50,8 +50,11 @@
             </div>
 
             <div class="sb-step-footer text-right mt-4">
-                <button type="button" class="step-button step-button-next btn btn-primary rounded-pill button-disabled" data-to_step="2"
-                    data-step="1" disabled>Siguiente</button>
+                <div class="alerts">
+                    
+                </div>
+                <button type="button" class="step-button btn btn-primary rounded-pill button-disabled next-step" data-to_step="2"
+                    data-step="1">Siguiente</button>
             </div>
         </div>
 
@@ -130,11 +133,12 @@
                 </div>
             </div>
 
+            <div class="alerts"></div>
             <div class="sb-step-footer d-flex justify-content-between mt-5">
                 <button type="button" class="step-button step-button-back btn btn-outline-primary rounded-pill"
                     data-to_step="1" data-step="2">Anterior</button>
-                <button type="button" class="step-button step-button-next btn btn-primary rounded-pill button-disabled" data-to_step="3"
-                    data-step="2" disabled>Siguiente</button>
+                <button type="button" class="step-button next-step btn btn-primary rounded-pill button-disabled" data-to_step="3"
+                    data-step="2">Siguiente</button>
             </div>
         </div>
 
@@ -173,8 +177,8 @@
             <div class="sb-step-footer d-flex justify-content-between mt-5">
                 <button type="button" class="step-button step-button-back btn btn-outline-primary rounded-pill"
                     data-to_step="2" data-step="3">Anterior</button>
-                <button type="submit" class="step-button step-button-next btn btn-primary rounded-pill button-disabled"
-                    data-step="3" disabled>Enviar</button>
+                <button type="submit" class="step-button next-step btn btn-primary rounded-pill button-disabled"
+                    data-step="3">Enviar</button>
             </div>
         </div>
     </div>

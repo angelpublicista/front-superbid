@@ -25,7 +25,7 @@ export const buttonEnabled = (btn_step, btn) => {
     let sel_button = sel_step.querySelector(btn);
 
     sel_button.classList.remove('button-disabled');
-    sel_button.removeAttribute('disabled');
+    sel_button.classList.add('step-button-next');
 }
 
 export const buttonDisabled = (btn_step, btn) => {
@@ -33,7 +33,7 @@ export const buttonDisabled = (btn_step, btn) => {
     let sel_button = sel_step.querySelector(btn);
 
     sel_button.classList.add('button-disabled');
-    sel_button.setAttribute('disabled', true);
+    sel_button.classList.remove('step-button-next');
 }
 
 export const completeFields = (form_step ,fields) => {
@@ -62,6 +62,22 @@ export const completeFields = (form_step ,fields) => {
         }
 
 
+    }
+
+    return true;
+}
+
+export const isDocumentValid = (fieldType ,field) => {
+    let fieldDoc = document.querySelector(field);
+    let fieldTypeDoc = document.querySelector(fieldType);
+    let fieldTypeVal = fieldTypeDoc.options[fieldTypeDoc.selectedIndex].value;
+    let fieldDocVal = fieldDoc.value;
+    
+    if (fieldTypeVal == 'cedula-ciudadania') {
+        let fieldDocNum = parseInt(fieldDocVal);
+        if(isNaN(fieldDocNum)){
+            return false;
+        }
     }
 
     return true;

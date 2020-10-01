@@ -1,7 +1,7 @@
 import progressBar from './../helpers/ProgressBar';
 import Campos from '../helpers/Campos';
 import optionFiles from './../helpers/OptionsFiles';
-import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled } from './../helpers/Validation';
+import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid } from './../helpers/Validation';
 
 const formReg = () => {
     progressBar('#form-register');
@@ -11,23 +11,50 @@ const formReg = () => {
     const buttons_opt = form_reg.querySelectorAll('.button-file');
 
     form_reg.addEventListener('change', function(){
-        if (completeFields('#step-1', '.input-required')) {
-            buttonEnabled("#step-1",".step-button-next");
+        let alerts = document.querySelector("#step-1 .alerts");
+        if (completeFields('#step-1', '.input-required') && isDocumentValid('#rg-tipo-doc', '#rg-num-doc')) {
+            buttonEnabled("#step-1",".next-step");
+            alerts.innerHTML = "";
         } else {
-            buttonDisabled("#step-1",".step-button-next");
+            let buttonNext1 = document.querySelector('#step-1 .next-step');
+            buttonNext1.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (!completeFields('#step-1', '.input-required')) {
+                    alerts.innerHTML = `<div class="alert alert-danger text-left" role="alert">
+                    Por favor complete todos los campos
+                  </div>`;
+                } else if(!isDocumentValid('#rg-tipo-doc', '#rg-num-doc')){
+                    alerts.innerHTML = `<div class="alert alert-danger text-left" role="alert">
+                    Por favor ingrese un documento válido
+                  </div>`;
+                }
+            })
+
+            buttonDisabled("#step-1",".next-step");
         }
         
     })
 
     for (const button of buttons_opt) {
+        let alerts2 = document.querySelector("#step-2 .alerts");
+        let buttonNext2 = document.querySelector('#step-2 .next-step');
+
         button.addEventListener('click', function(e) {
             e.preventDefault();
-
+           
             // Validación de campos
             if (isActiveAll('#step-2', '.button-file')) {
-                buttonEnabled("#step-2",".step-button-next");
+                buttonEnabled("#step-2",".next-step");
+                alerts2.innerHTML = "";
             } else {
-                buttonDisabled("#step-2",".step-button-next");
+                buttonDisabled("#step-2",".next-step");
+                
+                buttonNext2.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alerts2.innerHTML = `<div class="alert alert-danger text-left" role="alert">
+                        Por favor seleccione al menos un tipo de documento
+                    </div>`;
+                })
             }
             
             let id_button = button.getAttribute('id');
