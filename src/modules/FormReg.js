@@ -21,10 +21,19 @@ const formReg = () => {
 
             if(isActive(`#${id_button}`)){
                 formCampos.crearCampos();
-                seccion_subastas.classList.remove('section-hide');
+                seccion_subastas.classList.remove('d-none')
             } else {
                 formCampos.borrarCampos();
+                for (const sel_button of buttons_opt) {
+                    if (sel_button.classList.contains('.active')) {
+                        seccion_subastas.classList.remove('d-none')
+                        return;
+                    }
+
+                    seccion_subastas.classList.add('d-none')
+                }
             }
+
         })
     }
     
