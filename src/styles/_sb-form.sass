@@ -17,6 +17,9 @@
         margin: auto
 
 .sb-form
+    display: none
+    &.form-active
+        display: block
     &-header
         .sb-progressbar
             display: flex
@@ -57,11 +60,7 @@
     .sb-title-header
         color: $secondary
         font-weight: bold
-    .sb-sub-divider
-        border: 3px solid $secondary
-        width: 50px
-        margin: 1em auto
-        border-radius: 50px
+    
     .sb-subtitle-header
         font-size: 1.5em
         color: $body-color
@@ -168,6 +167,9 @@
         font-weight: 600
     &.section-hide
         display: none
+.form-check
+    .form-check-label
+        color: #353535 !important
 
 @keyframes scale
   from
