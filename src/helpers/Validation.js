@@ -24,16 +24,31 @@ export const buttonEnabled = (btn_step, btn) => {
     let sel_step = document.querySelector(btn_step);
     let sel_button = sel_step.querySelector(btn);
 
-    sel_button.classList.remove('button-disabled');
-    sel_button.classList.add('step-button-next');
+    if (sel_button.classList.contains('button-submit')) {
+        sel_button.setAttribute('type', 'submit');
+        sel_button.classList.remove('button-disabled');
+        sel_button.classList.add('step-button-next');
+    } else {
+        sel_button.classList.remove('button-disabled');
+        sel_button.classList.add('step-button-next');
+    }
+
+    
 }
 
 export const buttonDisabled = (btn_step, btn) => {
     let sel_step = document.querySelector(btn_step);
     let sel_button = sel_step.querySelector(btn);
 
-    sel_button.classList.add('button-disabled');
-    sel_button.classList.remove('step-button-next');
+    if (sel_button.classList.contains('button-submit')) {
+        sel_button.setAttribute('type', 'button');
+        sel_button.classList.add('button-disabled');
+        sel_button.classList.remove('step-button-next');
+    } else {
+        sel_button.classList.add('button-disabled');
+        sel_button.classList.remove('step-button-next');
+    }
+    
 }
 
 export const completeFields = (form_step ,fields) => {
@@ -51,7 +66,13 @@ export const completeFields = (form_step ,fields) => {
                 if (fieldVal.length <= 0) {
                     return false;
                 }            
-            }            
+            }
+            
+            if(fieldType == "checkbox"){
+                if (!field.checked) {
+                    return false;
+                }
+            }
         }
 
         if (fieldName == "select") {

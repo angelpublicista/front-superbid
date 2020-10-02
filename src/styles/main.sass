@@ -15,10 +15,6 @@ $success: #019F79
 @import "general-styles"
 @import "sb-form"
 
-
-
-
-
 .sb-header
     .nav-link
         color: white
@@ -61,6 +57,11 @@ h1
         border: none
         background-color: transparent
         outline: 0px
+        img
+            transition: all .3s
+        &:hover img, &.active img
+            opacity: .5
+        
 
 .sb-top-footer
     .nav-link
@@ -74,3 +75,16 @@ h1
     p
         opacity: .7
         font-size: .8em
+
+.sb-content
+    .icon-check
+        font-size: 10em
+        color: #019F79
+    .sb-title
+        @include titleHead($color: $secondary, $t-transform: uppercase)
+
+.sb-sub-divider
+        border: 3px solid $secondary
+        width: 50px
+        margin: 1em auto
+        border-radius: 50px
