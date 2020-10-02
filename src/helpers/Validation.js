@@ -82,3 +82,28 @@ export const isDocumentValid = (fieldType ,field) => {
 
     return true;
 }
+
+export const isFileUpload = (files) => {
+    let sel_files = document.querySelectorAll(files);
+
+    for (const file of sel_files) {
+        if (file.value.length > 0) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+export const activeFiles = (files) => {
+    let input_files = document.querySelectorAll(files);
+
+    for (const file of input_files) {
+        let fileValue = file.querySelector('.sb-input-file')
+        if (fileValue.value.length > 0) {
+            file.classList.add('file-active');
+        } else {
+            file.classList.remove('file-active');
+        }
+    }
+}

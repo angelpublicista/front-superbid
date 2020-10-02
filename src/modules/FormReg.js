@@ -1,7 +1,7 @@
 import progressBar from './../helpers/ProgressBar';
 import Campos from '../helpers/Campos';
 import optionFiles from './../helpers/OptionsFiles';
-import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid } from './../helpers/Validation';
+import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles } from './../helpers/Validation';
 
 const formReg = () => {
     progressBar('#form-register');
@@ -32,6 +32,23 @@ const formReg = () => {
 
             buttonDisabled("#step-1",".next-step");
         }
+
+        activeFiles('.sb-group-file');
+        let nombreSubasta = document.querySelector('.datos-subasta');
+        let inputNombre = nombreSubasta.querySelector('#rg-nombre-subasta');
+        if(nombreSubasta.classList.contains('d-none')){
+            inputNombre.classList.remove('input-required');
+        } else {
+            inputNombre.classList.add('input-required');
+        }
+
+        if(isFileUpload('.sb-input-file') && completeFields('#step-3', '.input-required')){
+            buttonEnabled("#step-3",".next-step");
+        } else {
+            buttonDisabled("#step-3",".next-step");
+        }
+        
+        
         
     })
 

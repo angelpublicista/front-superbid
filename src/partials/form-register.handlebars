@@ -20,7 +20,8 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="rg-tipo-doc">Tipo de documento</label>
-                            <select name="rg-tipo-doc" id="rg-tipo-doc" class="form-control custom-select input-required">
+                            <select name="rg-tipo-doc" id="rg-tipo-doc"
+                                class="form-control custom-select input-required">
                                 <option value="" disabled selected>Selecciona una opción</option>
                                 <option value="cedula-ciudadania">Cédula de ciudadanía</option>
                                 <option value="nit">NIT</option>
@@ -39,7 +40,8 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="rg-tipo-persona">Tipo de persona</label>
-                            <select name="rg-tipo-persona" id="rg-tipo-persona" class="form-control custom-select input-required">
+                            <select name="rg-tipo-persona" id="rg-tipo-persona"
+                                class="form-control custom-select input-required">
                                 <option value="" disabled selected>Selecciona una opción</option>
                                 <option value="p-natural">Natural</option>
                                 <option value="p-juridica">Jurídica</option>
@@ -51,10 +53,10 @@
 
             <div class="sb-step-footer text-right mt-4">
                 <div class="alerts">
-                    
+
                 </div>
-                <button type="button" class="step-button btn btn-primary rounded-pill button-disabled next-step" data-to_step="2"
-                    data-step="1">Siguiente</button>
+                <button type="button" class="step-button btn btn-primary rounded-pill button-disabled next-step"
+                    data-to_step="2" data-step="1">Siguiente</button>
             </div>
         </div>
 
@@ -68,8 +70,8 @@
             <div class="sb-step-body mt-5 sb-opt-files">
                 <div class="row text-center">
                     <div class="col-6 col-md-3">
-                        <button class="button-file" id="button-files-reg" data-active="campos-registro" data-toggle="tooltip" data-placement="bottom"
-                            data-html="true" title="
+                        <button class="button-file" id="button-files-reg" data-active="campos-registro"
+                            data-toggle="tooltip" data-placement="bottom" data-html="true" title="
                         <ul class='nav flex-column'>
                             <li class='nav-item'>- Cédula</li>
                             <li class='nav-item'>- RUT</li>
@@ -83,8 +85,8 @@
                         </button>
                     </div>
                     <div class="col-6 col-md-3">
-                        <button class="button-file" id="button-files-pag" data-toggle="tooltip" data-active="campos-pagos" data-placement="bottom" data-html="true"
-                            title="
+                        <button class="button-file" id="button-files-pag" data-toggle="tooltip"
+                            data-active="campos-pagos" data-placement="bottom" data-html="true" title="
                         <ul class='nav flex-column'>
                             <li class='nav-item'>- Carta de tercero</li>
                             <li class='nav-item'>- Soporte pago lote</li>
@@ -100,8 +102,8 @@
                         </button>
                     </div>
                     <div class="col-6 col-md-3">
-                        <button class="button-file" id="button-files-gar" data-toggle="tooltip" data-active="campos-garantia" data-placement="bottom" data-html="true"
-                            title="
+                        <button class="button-file" id="button-files-gar" data-toggle="tooltip"
+                            data-active="campos-garantia" data-placement="bottom" data-html="true" title="
                         <ul class='nav flex-column'>
                             <li class='nav-item'>- Soporte garantía</li>
                             <li class='nav-item'>- Certificación bancaria</li>
@@ -115,8 +117,8 @@
                         </button>
                     </div>
                     <div class="col-6 col-md-3">
-                        <button class="button-file" id="button-files-ret" data-toggle="tooltip" data-active="campos-retiros" data-placement="bottom" data-html="true"
-                            title="
+                        <button class="button-file" id="button-files-ret" data-toggle="tooltip"
+                            data-active="campos-retiros" data-placement="bottom" data-html="true" title="
                         <ul class='nav flex-column'>
                             <li class='nav-item'>- Plantilla de aportes</li>
                             <li class='nav-item'>- Poliza</li>
@@ -137,8 +139,8 @@
             <div class="sb-step-footer d-flex justify-content-between mt-5">
                 <button type="button" class="step-button step-button-back btn btn-outline-primary rounded-pill"
                     data-to_step="1" data-step="2">Anterior</button>
-                <button type="button" class="step-button next-step btn btn-primary rounded-pill button-disabled" data-to_step="3"
-                    data-step="2">Siguiente</button>
+                <button type="button" class="step-button next-step btn btn-primary rounded-pill button-disabled"
+                    data-to_step="3" data-step="2">Siguiente</button>
             </div>
         </div>
 
@@ -163,7 +165,7 @@
                     </div>
 
                     <div class="campos-pagos">
-                    {{!-- Campos js --}}
+                        {{!-- Campos js --}}
                     </div>
                     <div class="campos-garantia mt-4">
                         {{!-- Campos js --}}
@@ -171,6 +173,11 @@
                     <div class="campos-retiros mt-4">
                         {{!-- Campos js --}}
                     </div>
+                </div>
+
+                <div class="form-group form-check mt-4 text-dark">
+                    <input type="checkbox" class="form-check-input input-required" id="privacy-policy">
+                    <label class="form-check-label" for="privacy-policy">He leído y acepto las <a href="#">políticas de privacidad</a></label>
                 </div>
             </div>
 
