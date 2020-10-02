@@ -25,6 +25,11 @@ module.exports = {
             template: './src/index.handlebars'
         }),
 
+        new HtmlWebpackPlugin({
+            filename: 'gracias.html',
+            template: './src/gracias.handlebars'
+        }),
+
         // new HtmlWebpackPlugin({
         //     filename: 'blog.html',
         //     template: './src/templates/blog.handlebars'
@@ -78,7 +83,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpe?g|gif)$/,
+                test: /\.(png|jpe?g|gif|svg)$/,
                 use: [
                     {
                         loader: 'file-loader',
