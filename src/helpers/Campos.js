@@ -18,7 +18,7 @@ class Campos {
                         <div class="row mt-3">
                             <div class="col-6 col-md-3">
                                 <div class="form-group sb-group-file position-relative text-center">
-                                    <input type="file" id="rg-field-documento" class="sb-input-file" name="rg-field-documento">
+                                    <input type="file" accept="image/jpeg,image/jpg,image/png" id="rg-field-documento" class="sb-input-file" name="rg-field-documento">
                                     <div class="icon-file">
                                         <i class="fas fa-file"></i>
                                     </div>
