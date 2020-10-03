@@ -10,11 +10,62 @@ class Campos {
 
     crearCampos() {
         let contenido = ""
+        let tipo_persona = document.querySelector("#rg-tipo-persona").value;
+        
         switch (this.tipo_campos) {
             case "campos-registro":
-                contenido = `
+
+                if (tipo_persona == "p-juridica") {
+                    contenido = `
+                        <div class="sb-docs sb-docs-registro">
+                            <h3 class="sb-title-head-docs">Documentos de registro - Persona jurídica</h3>
+                            <div class="row mt-3">
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group sb-group-file position-relative text-center">
+                                        <input type="file" accept="image/jpeg,image/jpg,image/png" id="rg-field-documento" class="sb-input-file" name="rg-field-documento">
+                                        <div class="icon-file">
+                                            <i class="fas fa-file"></i>
+                                        </div>
+                                        <label for="rg-field-documento" class="mt-2">Documento de identidad</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group sb-group-file position-relative text-center">
+                                        <input type="file" id="rg-field-rut" class="sb-input-file input-required" name="rg-field-rut">
+                                        <div class="icon-file">
+                                            <i class="fas fa-file"></i>
+                                        </div>
+                                        <label for="rg-field-rut" class="mt-2">RUT Vigente</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group sb-group-file position-relative text-center">
+                                        <input type="file" id="rg-field-camara-comercio" class="sb-input-file input-required" name="rg-field-camara-comercio">
+                                        <div class="icon-file">
+                                            <i class="fas fa-file"></i>
+                                        </div>
+                                        <label for="rg-field-camara-comercio" class="mt-2">Cámara de comercio</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group sb-group-file position-relative text-center">
+                                        <input type="file" id="rg-field-cedula-rep" class="sb-input-file input-required" name="rg-field-cedula-rep">
+                                        <div class="icon-file">
+                                            <i class="fas fa-file"></i>
+                                        </div>
+                                        <label for="rg-field-cedula-rep" class="mt-2">Cédula representante legal</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                } else {
+                    contenido = `
                     <div class="sb-docs sb-docs-registro">
-                        <h3 class="sb-title-head-docs">Documentos de registro</h3>
+                        <h3 class="sb-title-head-docs">Documentos de registro - Persona natural</h3>
                         <div class="row mt-3">
                             <div class="col-6 col-md-3">
                                 <div class="form-group sb-group-file position-relative text-center">
@@ -25,19 +76,21 @@ class Campos {
                                     <label for="rg-field-documento" class="mt-2">Documento de identidad</label>
                                 </div>
                             </div>
-
+                            
                             <div class="col-6 col-md-3">
                                 <div class="form-group sb-group-file position-relative text-center">
-                                    <input type="file" id="rg-field-documento" class="sb-input-file" name="rg-field-documento">
+                                    <input type="file" id="rg-field-rut" class="sb-input-file" name="rg-field-rut">
                                     <div class="icon-file">
                                         <i class="fas fa-file"></i>
                                     </div>
-                                    <label for="rg-field-documento" class="mt-2">Documento de identidad</label>
+                                    <label for="rg-field-rut" class="mt-2">RUT</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 `
+                }
+                
                 break;
 
             case "campos-pagos":
