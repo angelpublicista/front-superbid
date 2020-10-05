@@ -14,22 +14,8 @@ const formReg = () => {
         let alerts = document.querySelector("#step-1 .alerts");
         if (completeFields('#step-1', '.input-required') && isDocumentValid('#rg-tipo-doc', '#rg-num-doc')) {
             buttonEnabled("#step-1",".next-step");
-            alerts.innerHTML = "";
         } else {
             let buttonNext1 = document.querySelector('#step-1 .next-step');
-            buttonNext1.addEventListener('click', function(e) {
-                e.preventDefault();
-                if (!completeFields('#step-1', '.input-required')) {
-                    alerts.innerHTML = `<div class="alert alert-danger text-left" role="alert">
-                    Por favor complete todos los campos
-                  </div>`;
-                } else if(!isDocumentValid('#rg-tipo-doc', '#rg-num-doc')){
-                    alerts.innerHTML = `<div class="alert alert-danger text-left" role="alert">
-                    Por favor ingrese un documento válido
-                  </div>`;
-                }
-            })
-
             buttonDisabled("#step-1",".next-step");
         }
 

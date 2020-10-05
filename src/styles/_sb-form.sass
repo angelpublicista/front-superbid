@@ -104,6 +104,7 @@
             height: 50px
             background-color: transparent
             margin-bottom: .5em
+            position: relative
             &:focus
                 border-color: $secondary
                 outline: none !important
@@ -115,6 +116,30 @@
             color: $secondary
             font-weight: 600
             font-size: .9em
+        svg
+            position: absolute
+            top: 45px
+            right: 45px
+            visibility: hidden
+            &.fa-exclamation-circle
+                color: $danger
+            &.fa-check-circle
+                color: $success
+        small
+            visibility: hidden
+        &.success
+            .form-control
+                border: 2px solid $success
+            .fa-check-circle
+                visibility: visible
+        &.error
+            .form-control
+                border: 2px solid $danger
+            .fa-exclamation-circle
+                visibility: visible
+            small
+                visibility: visible
+                color: $danger
 .sb-step-footer
     .button-disabled
         background-color: #ccc

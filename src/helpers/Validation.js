@@ -20,6 +20,26 @@ export const isActiveAll = (form_step, buttons) => {
     return false;
 }
 
+
+export const setErrorFor = (input, message) => {
+    const formGroup = input.parentElement
+    const small = formGroup.querySelector("small")
+
+    //Add error
+    small.innerText = message;
+    formGroup.classList.add('error');
+    formGroup.classList.remove('success');
+}
+
+export const setSuccessFor = (input) => {
+    const formGroup = input.parentElement
+    const small = formGroup.querySelector("small")
+
+    //Add error
+    formGroup.classList.add('success');
+    formGroup.classList.remove('error');
+}
+
 export const buttonEnabled = (btn_step, btn) => {
     let sel_step = document.querySelector(btn_step);
     let sel_button = sel_step.querySelector(btn);
@@ -62,10 +82,13 @@ export const completeFields = (form_step ,fields) => {
         if (fieldName == "input") {
             let fieldType = field.getAttribute('type');
             if (fieldType == "text" || fieldType == "number") {
-                let fieldVal = field.value;
+                let fieldVal = field.value.trim();
                 if (fieldVal.length <= 0) {
+                    setErrorFor(field, "Debe completar este campo");
                     return false;
-                }            
+                } else {
+                    setSuccessFor(field);
+                }           
             }
             
             if(fieldType == "checkbox"){
@@ -78,7 +101,10 @@ export const completeFields = (form_step ,fields) => {
         if (fieldName == "select") {
             let selectVal = field.options[field.selectedIndex].value;
             if (!selectVal) {
+                setErrorFor(field, "Debe completar este campo");
                 return false;
+            } else {
+                setSuccessFor(field);
             }
         }
 
@@ -97,6 +123,7 @@ export const isDocumentValid = (fieldType ,field) => {
     if (fieldTypeVal == 'cedula-ciudadania') {
         let fieldDocNum = parseInt(fieldDocVal);
         if(isNaN(fieldDocNum)){
+            setErrorFor(fieldDoc, "Por favor ingrese un documento válido");
             return false;
         }
     }
