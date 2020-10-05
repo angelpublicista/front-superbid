@@ -11,7 +11,6 @@ const formReg = () => {
     const buttons_opt = form_reg.querySelectorAll('.button-file');
 
     form_reg.addEventListener('change', function(){
-        let alerts = document.querySelector("#step-1 .alerts");
         if (completeFields('#step-1', '.input-required') && isDocumentValid('#rg-tipo-doc', '#rg-num-doc')) {
             buttonEnabled("#step-1",".next-step");
         } else {

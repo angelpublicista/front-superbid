@@ -21,7 +21,7 @@ class Campos {
                             <h3 class="sb-title-head-docs">Documentos de registro - Persona jurídica</h3>
                             <div class="row mt-3">
                                 <div class="col-6 col-md-3">
-                                    <div class="form-group sb-group-file position-relative text-center">
+                                    <div class="sb-group-file position-relative text-center">
                                         <input type="file" accept="image/jpeg,image/jpg,image/png" id="rg-field-documento" class="sb-input-file" name="rg-field-documento">
                                         <div class="icon-file">
                                             <i class="fas fa-file"></i>
@@ -31,7 +31,7 @@ class Campos {
                                 </div>
                                 
                                 <div class="col-6 col-md-3">
-                                    <div class="form-group sb-group-file position-relative text-center">
+                                    <div class="sb-group-file position-relative text-center">
                                         <input type="file" id="rg-field-rut" class="sb-input-file input-required" name="rg-field-rut">
                                         <div class="icon-file">
                                             <i class="fas fa-file"></i>
@@ -41,7 +41,7 @@ class Campos {
                                 </div>
 
                                 <div class="col-6 col-md-3">
-                                    <div class="form-group sb-group-file position-relative text-center">
+                                    <div class="sb-group-file position-relative text-center">
                                         <input type="file" id="rg-field-camara-comercio" class="sb-input-file input-required" name="rg-field-camara-comercio">
                                         <div class="icon-file">
                                             <i class="fas fa-file"></i>
@@ -51,7 +51,7 @@ class Campos {
                                 </div>
 
                                 <div class="col-6 col-md-3">
-                                    <div class="form-group sb-group-file position-relative text-center">
+                                    <div class="sb-group-file position-relative text-center">
                                         <input type="file" id="rg-field-cedula-rep" class="sb-input-file input-required" name="rg-field-cedula-rep">
                                         <div class="icon-file">
                                             <i class="fas fa-file"></i>
@@ -68,7 +68,7 @@ class Campos {
                         <h3 class="sb-title-head-docs">Documentos de registro - Persona natural</h3>
                         <div class="row mt-3">
                             <div class="col-6 col-md-3">
-                                <div class="form-group sb-group-file position-relative text-center">
+                                <div class="sb-group-file position-relative text-center">
                                     <input type="file" accept="image/jpeg,image/jpg,image/png" id="rg-field-documento" class="sb-input-file" name="rg-field-documento">
                                     <div class="icon-file">
                                         <i class="fas fa-file"></i>
@@ -78,7 +78,7 @@ class Campos {
                             </div>
                             
                             <div class="col-6 col-md-3">
-                                <div class="form-group sb-group-file position-relative text-center">
+                                <div class="sb-group-file position-relative text-center">
                                     <input type="file" id="rg-field-rut" class="sb-input-file" name="rg-field-rut">
                                     <div class="icon-file">
                                         <i class="fas fa-file"></i>
@@ -98,7 +98,7 @@ class Campos {
                                 <h3 class="sb-title-head-docs">Documentos de pagos</h3>
                                 <div class="row mt-3">
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class="sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-carta-tercero" class="sb-input-file" name="rg-field-carta-tercero">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -108,7 +108,7 @@ class Campos {
                                     </div>
 
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class="sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-soporte-pago-lote" class="sb-input-file" name="rg-field-soporte-pago-lote">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -118,7 +118,7 @@ class Campos {
                                     </div>
 
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class="sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-soporte-pago-comision" class="sb-input-file" name="rg-field-soporte-pago-comision">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -128,7 +128,7 @@ class Campos {
                                     </div>
 
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class="sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-soporte-pago-traspasos" class="sb-input-file" name="rg-field-soporte-pago-traspasos">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -138,7 +138,7 @@ class Campos {
                                     </div>
 
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class="sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-soporte-pago-fianza" class="sb-input-file" name="rg-field-soporte-pago-fianza">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -155,7 +155,7 @@ class Campos {
                                 <h3 class="sb-title-head-docs">Documentos de garantía</h3>
                                 <div class="row mt-3">
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class=" sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-soporte-garantia" class="sb-input-file" name="rg-field-soporte-garantia">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -165,7 +165,7 @@ class Campos {
                                     </div>
 
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class=" sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-certificacion-bancaria" class="sb-input-file" name="rg-field-certificacion-bancaria">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -175,7 +175,7 @@ class Campos {
                                     </div>
 
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class=" sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-documentos-garantias" class="sb-input-file" name="rg-field-documentos-garantias">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -192,7 +192,7 @@ class Campos {
                                 <h3 class="sb-title-head-docs">Documentos de retiro</h3>
                                 <div class="row mt-3">
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class=" sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-planilla-aportes" class="sb-input-file" name="rg-field-planilla-aportes">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -202,7 +202,7 @@ class Campos {
                                     </div>
 
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class=" sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-poliza" class="sb-input-file" name="rg-field-poliza">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -212,7 +212,7 @@ class Campos {
                                     </div>
 
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class=" sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-rtm" class="sb-input-file" name="rg-field-rtm">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
@@ -222,7 +222,7 @@ class Campos {
                                     </div>
 
                                     <div class="col-6 col-md-3">
-                                        <div class="form-group sb-group-file position-relative text-center">
+                                        <div class=" sb-group-file position-relative text-center">
                                             <input type="file" id="rg-field-soat" class="sb-input-file" name="rg-field-soat">
                                             <div class="icon-file">
                                                 <i class="fas fa-file"></i>
