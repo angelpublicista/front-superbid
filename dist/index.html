@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <title>Actualización documentos | Superbid</title>
 <link href="css/main-styles.css" rel="stylesheet"></head>
 <body>
@@ -99,6 +98,9 @@
                                                         <option value="nit">NIT</option>
                                                         <option value="cedula-extranjeria">Cédula de extranjería</option>
                                                     </select>
+                                                    <i class="fas fa-check-circle"></i>
+                                                    <i class="fas fa-exclamation-circle"></i>
+                                                    <small>Error message</small>
                                                 </div>
                                             </div>
                         
@@ -108,7 +110,7 @@
                                                     <input type="text" name="rg-num-doc" id="rg-num-doc" class="form-control input-required">
                                                     <i class="fas fa-check-circle"></i>
                                                     <i class="fas fa-exclamation-circle"></i>
-                                                    <small>Error message</small>
+                                                    <small class="err-message">Error message</small>
                                                 </div>
                                             </div>
                         
@@ -121,6 +123,9 @@
                                                         <option value="p-natural">Natural</option>
                                                         <option value="p-juridica">Jurídica</option>
                                                     </select>
+                                                    <i class="fas fa-check-circle"></i>
+                                                    <i class="fas fa-exclamation-circle"></i>
+                                                    <small class="err-message">Error message</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -231,9 +236,12 @@
                         
                                         <div class="datos-subasta p-5 mt-5 d-none">
                                             <h2>Datos de subasta</h2>
-                                            <div class="form-group mt-3">
+                                            <div class="form-group mt-3 position-relative">
                                                 <label for="rg-nombre-subasta">Nombre de la subasta</label>
-                                                <input type="text" class="form-control" name="rg-nombre-subasta" id="rg-nombre-subasta">
+                                                <input type="text" class="form-control input-required" name="rg-nombre-subasta" id="rg-nombre-subasta">
+                                                <i class="fas fa-check-circle"></i>
+                                                <i class="fas fa-exclamation-circle"></i>
+                                                <small class="err-message">Error message</small>
                                             </div>
                         
                                             <div class="campos-pagos">
