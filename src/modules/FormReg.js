@@ -27,15 +27,33 @@ const formReg = () => {
             buttonDisabled("#step-1",".next-step");
         }
 
-        activeFiles('.sb-group-file');
-        let nombreSubasta = document.querySelector('.datos-subasta');
-        let inputNombre = nombreSubasta.querySelector('#rg-nombre-subasta');
-        if(nombreSubasta.classList.contains('d-none')){
-            inputNombre.classList.remove('input-required');
-        } else {
-            inputNombre.classList.add('input-required');
+
+        // Validation step 2
+        let inputRadio = document.getElementsByName('rg-type-document');
+
+        for (const field of inputRadio) {
+            let customRadioCheck = field.parentElement;
+            let activeFields = field.dataset.fields;
+            if (field.checked) {
+                customRadioCheck.classList.add("success");
+                document.querySelector(`#${activeFields}`).classList.remove("d-none");
+                buttonEnabled("#step-2",".next-step");
+                if (activeFields != "campos-registro") {
+                    let nombreSubasta = document.querySelector("#rg-nombre-subasta");
+                    nombreSubasta.classList.add("input-required");
+                } else {
+                    let nombreSubasta = document.querySelector("#rg-nombre-subasta");
+                    nombreSubasta.classList.remove("input-required");
+                }
+            } else {
+                document.querySelector(`#${activeFields}`).classList.add("d-none");
+                customRadioCheck.classList.remove("success");
+            }
+            
         }
 
+        activeFiles('.sb-group-file');
+        
         const valFields3 = completeFields('#step-3', '.input-required');
         const fileUpload3 = isFileUpload('.sb-input-file');
 
@@ -43,7 +61,8 @@ const formReg = () => {
             buttonEnabled("#step-3",".next-step");
         } else {
             buttonDisabled("#step-3",".next-step");
-        } 
+        }
+
     })
 
     for (const button of buttons_opt) {
@@ -55,7 +74,7 @@ const formReg = () => {
            
             // Validación de campos
             if (isActiveAll('#step-2', '.button-file')) {
-                buttonEnabled("#step-2",".next-step");
+                
                 alerts2.innerHTML = "";
             } else {
                 buttonDisabled("#step-2",".next-step");
