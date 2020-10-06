@@ -148,8 +148,14 @@ export const activeFiles = (files) => {
     let input_files = document.querySelectorAll(files);
 
     for (const file of input_files) {
-        let fileValue = file.querySelector('.sb-input-file')
+        let fileValue = file.querySelector('.sb-input-file');
+        
         if (fileValue.value.length > 0) {
+            let nameFile = fileValue.files[0].name;
+            let boxNameFile = file.querySelector('.sb-name-file')
+
+            boxNameFile.innerHTML = nameFile;
+
             file.classList.add('file-active');
         } else {
             file.classList.remove('file-active');

@@ -37,16 +37,18 @@ const formReg = () => {
             if (field.checked) {
                 customRadioCheck.classList.add("success");
                 document.querySelector(`#${activeFields}`).classList.remove("d-none");
-                buttonEnabled("#step-2",".next-step");
-                if (activeFields != "campos-registro") {
-                    let nombreSubasta = document.querySelector("#rg-nombre-subasta");
-                    nombreSubasta.classList.add("input-required");
-                } else {
-                    let nombreSubasta = document.querySelector("#rg-nombre-subasta");
-                    nombreSubasta.classList.remove("input-required");
+                let subasta = document.querySelector(`#${activeFields} #rg-nombre-subasta`);
+                if (subasta) {
+                    subasta.classList.add("input-required");
                 }
+                
+                buttonEnabled("#step-2",".next-step");
             } else {
                 document.querySelector(`#${activeFields}`).classList.add("d-none");
+                let subasta = document.querySelector(`#${activeFields} #rg-nombre-subasta`);
+                if (subasta) {
+                    subasta.classList.remove("input-required");
+                }
                 customRadioCheck.classList.remove("success");
             }
             
