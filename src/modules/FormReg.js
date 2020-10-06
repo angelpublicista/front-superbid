@@ -57,9 +57,9 @@ const formReg = () => {
         activeFiles('.sb-group-file');
         
         const valFields3 = completeFields('#step-3', '.input-required');
-        const fileUpload3 = isFileUpload('.sb-input-file');
+        
 
-        if(fileUpload3 && valFields3){
+        if(valFields3 && isFileUpload('.sb-group-file')){
             buttonEnabled("#step-3",".next-step");
         } else {
             buttonDisabled("#step-3",".next-step");
