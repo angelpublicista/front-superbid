@@ -75,7 +75,6 @@ export const completeFields = (form_step ,fields) => {
     let step = document.querySelector(form_step);
     let sel_fields = step.querySelectorAll(fields);
 
-
     for (const field of sel_fields) {
         let fieldName = field.tagName.toLowerCase();
 
@@ -125,6 +124,8 @@ export const isDocumentValid = (fieldType ,field) => {
         if(isNaN(fieldDocNum)){
             setErrorFor(fieldDoc, "Por favor ingrese un documento válido");
             return false;
+        } else {
+            setSuccessFor(fieldDoc);
         }
     }
 

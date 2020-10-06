@@ -11,7 +11,17 @@ const formReg = () => {
     const buttons_opt = form_reg.querySelectorAll('.button-file');
 
     form_reg.addEventListener('change', function(){
-        if (completeFields('#step-1', '.input-required') && isDocumentValid('#rg-tipo-doc', '#rg-num-doc')) {
+        const tipoDocumento = document.querySelector("#rg-tipo-doc");
+        const tipoPersona = document.querySelector("#rg-tipo-persona");
+
+        if (tipoDocumento.options[tipoDocumento.selectedIndex].value == "nit") {
+            tipoPersona.selectedIndex = "2";
+        }
+
+        const valFields1 = completeFields('#step-1', '.input-required');
+        const validDocuments1 = isDocumentValid('#rg-tipo-doc', '#rg-num-doc');
+
+        if (valFields1 && validDocuments1) {
             buttonEnabled("#step-1",".next-step");
         } else {
             buttonDisabled("#step-1",".next-step");
@@ -26,7 +36,10 @@ const formReg = () => {
             inputNombre.classList.add('input-required');
         }
 
-        if(isFileUpload('.sb-input-file') && completeFields('#step-3', '.input-required')){
+        const valFields3 = completeFields('#step-3', '.input-required');
+        const fileUpload3 = isFileUpload('.sb-input-file');
+
+        if(fileUpload3 && valFields3){
             buttonEnabled("#step-3",".next-step");
         } else {
             buttonDisabled("#step-3",".next-step");
