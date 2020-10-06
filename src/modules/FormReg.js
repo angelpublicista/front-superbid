@@ -1,7 +1,7 @@
 import progressBar from './../helpers/ProgressBar';
 import Campos from '../helpers/Campos';
 import optionFiles from './../helpers/OptionsFiles';
-import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles } from './../helpers/Validation';
+import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor } from './../helpers/Validation';
 
 const formReg = () => {
     progressBar('#form-register');
@@ -11,30 +11,60 @@ const formReg = () => {
     const buttons_opt = form_reg.querySelectorAll('.button-file');
 
     form_reg.addEventListener('change', function(){
-        if (completeFields('#step-1', '.input-required') && isDocumentValid('#rg-tipo-doc', '#rg-num-doc')) {
+        const tipoDocumento = document.querySelector("#rg-tipo-doc");
+        const tipoPersona = document.querySelector("#rg-tipo-persona");
+
+        if (tipoDocumento.options[tipoDocumento.selectedIndex].value == "nit") {
+            tipoPersona.selectedIndex = "2";
+        }
+
+        const valFields1 = completeFields('#step-1', '.input-required');
+        const validDocuments1 = isDocumentValid('#rg-tipo-doc', '#rg-num-doc');
+
+        if (valFields1 && validDocuments1) {
             buttonEnabled("#step-1",".next-step");
         } else {
-            let buttonNext1 = document.querySelector('#step-1 .next-step');
             buttonDisabled("#step-1",".next-step");
         }
 
-        activeFiles('.sb-group-file');
-        let nombreSubasta = document.querySelector('.datos-subasta');
-        let inputNombre = nombreSubasta.querySelector('#rg-nombre-subasta');
-        if(nombreSubasta.classList.contains('d-none')){
-            inputNombre.classList.remove('input-required');
-        } else {
-            inputNombre.classList.add('input-required');
+
+        // Validation step 2
+        let inputRadio = document.getElementsByName('rg-type-document');
+
+        for (const field of inputRadio) {
+            let customRadioCheck = field.parentElement;
+            let activeFields = field.dataset.fields;
+            if (field.checked) {
+                customRadioCheck.classList.add("success");
+                document.querySelector(`#${activeFields}`).classList.remove("d-none");
+                let subasta = document.querySelector(`#${activeFields} #rg-nombre-subasta`);
+                if (subasta) {
+                    subasta.classList.add("input-required");
+                }
+                
+                buttonEnabled("#step-2",".next-step");
+            } else {
+                document.querySelector(`#${activeFields}`).classList.add("d-none");
+                let subasta = document.querySelector(`#${activeFields} #rg-nombre-subasta`);
+                if (subasta) {
+                    subasta.classList.remove("input-required");
+                }
+                customRadioCheck.classList.remove("success");
+            }
+            
         }
 
-        if(isFileUpload('.sb-input-file') && completeFields('#step-3', '.input-required')){
+        activeFiles('.sb-group-file');
+        
+        const valFields3 = completeFields('#step-3', '.input-required');
+        
+
+        if(valFields3 && isFileUpload('.sb-group-file')){
             buttonEnabled("#step-3",".next-step");
         } else {
             buttonDisabled("#step-3",".next-step");
         }
-        
-        
-        
+
     })
 
     for (const button of buttons_opt) {
@@ -46,7 +76,7 @@ const formReg = () => {
            
             // Validación de campos
             if (isActiveAll('#step-2', '.button-file')) {
-                buttonEnabled("#step-2",".next-step");
+                
                 alerts2.innerHTML = "";
             } else {
                 buttonDisabled("#step-2",".next-step");
