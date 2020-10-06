@@ -1,7 +1,7 @@
 import progressBar from './../helpers/ProgressBar';
 import Campos from '../helpers/Campos';
 import optionFiles from './../helpers/OptionsFiles';
-import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles } from './../helpers/Validation';
+import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor } from './../helpers/Validation';
 
 const formReg = () => {
     progressBar('#form-register');
@@ -14,7 +14,6 @@ const formReg = () => {
         if (completeFields('#step-1', '.input-required') && isDocumentValid('#rg-tipo-doc', '#rg-num-doc')) {
             buttonEnabled("#step-1",".next-step");
         } else {
-            let buttonNext1 = document.querySelector('#step-1 .next-step');
             buttonDisabled("#step-1",".next-step");
         }
 
@@ -31,10 +30,7 @@ const formReg = () => {
             buttonEnabled("#step-3",".next-step");
         } else {
             buttonDisabled("#step-3",".next-step");
-        }
-        
-        
-        
+        } 
     })
 
     for (const button of buttons_opt) {

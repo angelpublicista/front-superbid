@@ -77,12 +77,12 @@ export const completeFields = (form_step ,fields) => {
 
 
     for (const field of sel_fields) {
-        let fieldName = field.localName;
-        
+        let fieldName = field.tagName.toLowerCase();
+
         if (fieldName == "input") {
             let fieldType = field.getAttribute('type');
             if (fieldType == "text" || fieldType == "number") {
-                let fieldVal = field.value.trim();
+                let fieldVal = field.value;
                 if (fieldVal.length <= 0) {
                     setErrorFor(field, "Debe completar este campo");
                     return false;
