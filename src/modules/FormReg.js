@@ -18,6 +18,28 @@ const formReg = () => {
             tipoPersona.selectedIndex = "2";
         }
 
+        const registro = document.getElementById('campos-registro');
+        const titulo_registro = registro.querySelector('.sb-title-head-docs');
+        const camara_comercio = registro.querySelector('.wrap-camara-comercio');
+        const rep_legal = registro.querySelector('.wrap-rep-legal');
+
+        if (tipoPersona.selectedIndex == "1") {
+            camara_comercio.classList.remove('input-required');
+            rep_legal.classList.remove('input-required');
+
+            camara_comercio.style.display = "none";
+            rep_legal.style.display = "none";
+            titulo_registro.innerText = "Documentos de registro - Persona natural";
+        } else {
+            camara_comercio.classList.add('input-required');
+            rep_legal.classList.add('input-required');
+
+            camara_comercio.style.display = "flex";
+            rep_legal.style.display = "flex";
+            titulo_registro.innerText = "Documentos de registro - Persona jurídica";
+
+        }
+
         const valFields1 = completeFields('#step-1', '.input-required');
         const validDocuments1 = isDocumentValid('#rg-tipo-doc', '#rg-num-doc');
 
