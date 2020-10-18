@@ -6,7 +6,12 @@ const progressBar = (formulario) => {
     let element = e.target;
     let isButtonNext = element.classList.contains("step-button-next");
     let isButtonBack = element.classList.contains("step-button-back");
+    let isButtonSubmit = element.classList.contains("button-submit");
     if (isButtonNext || isButtonBack) {
+      if (isButtonSubmit) {
+        return;
+      }
+
       let currentStep = document.getElementById("step-" + element.dataset.step);
       let jumpStep = document.getElementById("step-" + element.dataset.to_step);
 
