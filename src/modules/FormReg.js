@@ -54,22 +54,23 @@ const formReg = () => {
         let inputRadio = document.getElementsByName('rg-type-document');
 
         for (const field of inputRadio) {
-            let customRadioCheck = field.parentElement;
-            let activeFields = field.dataset.fields;
+            const customRadioCheck = field.parentElement;
+            const activeFields = field.dataset.fields;
+            const subasta = document.querySelector(`#${activeFields} #rg-nombre-subasta`);
             if (field.checked) {
                 customRadioCheck.classList.add("success");
                 document.querySelector(`#${activeFields}`).classList.remove("d-none");
-                let subasta = document.querySelector(`#${activeFields} #rg-nombre-subasta`);
                 if (subasta) {
                     subasta.classList.add("input-required");
+                    subasta.required = true;
                 }
                 
                 buttonEnabled("#step-2",".next-step");
             } else {
                 document.querySelector(`#${activeFields}`).classList.add("d-none");
-                let subasta = document.querySelector(`#${activeFields} #rg-nombre-subasta`);
                 if (subasta) {
                     subasta.classList.remove("input-required");
+                    subasta.required = false;
                 }
                 customRadioCheck.classList.remove("success");
             }
