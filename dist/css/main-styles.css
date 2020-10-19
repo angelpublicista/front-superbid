@@ -17105,6 +17105,10 @@ h1 {
   font-size: 10em;
   color: #019F79;
 }
+.sb-content .icon-error {
+  font-size: 10em;
+  color: #dc3545;
+}
 .sb-content .sb-title {
   color: #01499F;
   font-family: "Raleway", sans-serif;

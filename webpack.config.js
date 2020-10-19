@@ -30,6 +30,11 @@ module.exports = {
             template: './src/gracias.handlebars'
         }),
 
+        new HtmlWebpackPlugin({
+            filename: 'error.html',
+            template: './src/error.handlebars'
+        }),
+
         // new HtmlWebpackPlugin({
         //     filename: 'blog.html',
         //     template: './src/templates/blog.handlebars'
