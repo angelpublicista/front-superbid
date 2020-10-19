@@ -56,10 +56,13 @@ h1
         border: none
         background-color: transparent
         outline: 0px
-        img
-            transition: all .3s
-        &:hover img, &.active img
+        .btn
             opacity: .5
+        img
+            opacity: .5
+            transition: all .3s
+        &:hover img, &:hover .btn, &.active img, &.active .btn
+            opacity: 1
         
 
 .sb-top-footer

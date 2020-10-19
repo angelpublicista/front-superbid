@@ -1,13 +1,10 @@
-import progressBar from './../helpers/ProgressBar';
-import Campos from '../helpers/Campos';
 import optionFiles from './../helpers/OptionsFiles';
 import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor } from './../helpers/Validation';
 
 const formReg = () => {
-    progressBar('#form-register');
     optionFiles('.button-file');
     
-    let form_reg = document.querySelector('#form-register');
+    const form_reg = document.querySelector('#form-register');
     const buttons_opt = form_reg.querySelectorAll('.button-file');
 
     form_reg.addEventListener('change', function(){
@@ -40,7 +37,7 @@ const formReg = () => {
 
         }
 
-        const valFields1 = completeFields('#step-1', '.input-required');
+        const valFields1 = completeFields('#form-register #step-1', '.input-required');
         const validDocuments1 = isDocumentValid('#rg-tipo-doc', '#rg-num-doc');
 
         if (valFields1 && validDocuments1) {
@@ -83,9 +80,9 @@ const formReg = () => {
         
 
         if(valFields3 && isFileUpload('.sb-group-file')){
-            buttonEnabled("#step-3",".next-step");
+            buttonEnabled("#form-register #step-3",".next-step");
         } else {
-            buttonDisabled("#step-3",".next-step");
+            buttonDisabled("#form-register #step-3",".next-step");
         }
 
     })
@@ -113,31 +110,6 @@ const formReg = () => {
                 }
             }
             
-            let id_button = button.getAttribute('id');
-            let campos_activar = button.dataset.active;
-            let seccion_subastas = document.querySelector('.datos-subasta');
-            
-            let formCampos = new Campos('.sb-ind-files', `${campos_activar}`);
-
-            if(isActive(`#${id_button}`)){
-                formCampos.crearCampos();
-                if (campos_activar != "campos-registro") {
-                    seccion_subastas.classList.remove('d-none')   
-                }
-            } else {
-                formCampos.borrarCampos();
-                for (const sel_button of buttons_opt) {
-                    let sel_campos_activar = sel_button.dataset.active;
-
-                    if (sel_button.classList.contains('.active') && sel_campos_activar != "campos-registro") {
-                        seccion_subastas.classList.remove('d-none')
-                        return;
-                    }
-
-                    seccion_subastas.classList.add('d-none')
-                }
-            }
-
         })
     }
     

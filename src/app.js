@@ -6,7 +6,9 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import AOS from 'aos';
 
 //Modules
+import toggleForms from "./modules/ActiveForms";
 import formReg from "./modules/FormReg";
+import formUpt from "./modules/FormUpt";
 
 // Styles
 import "./styles/main.sass";
@@ -20,4 +22,7 @@ import "./static/logo-superbid.svg";
 AOS.init();
 
 formReg();
+formUpt();
 $('.button-file').tooltip();
+
+toggleForms('.button-form', '.sb-form');
