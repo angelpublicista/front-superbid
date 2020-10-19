@@ -60,6 +60,7 @@ const formReg = () => {
                 if (subasta) {
                     subasta.classList.add("input-required");
                     subasta.required = true;
+                    subasta.setAttribute('name', 'rg-nombre-subasta');
                 }
                 
                 buttonEnabled("#step-2",".next-step");
@@ -68,6 +69,7 @@ const formReg = () => {
                 if (subasta) {
                     subasta.classList.remove("input-required");
                     subasta.required = false;
+                    subasta.removeAttribute('name');
                 }
                 customRadioCheck.classList.remove("success");
             }
