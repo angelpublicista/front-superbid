@@ -10,6 +10,7 @@ import toggleForms from "./modules/ActiveForms";
 import formReg from "./modules/FormReg";
 import formUpt from "./modules/FormUpt";
 
+
 // Styles
 import "./styles/main.sass";
 

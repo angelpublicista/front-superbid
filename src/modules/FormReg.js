@@ -40,6 +40,7 @@ const formReg = () => {
         const valFields1 = completeFields('#form-register #step-1', '.input-required');
         const validDocuments1 = isDocumentValid('#rg-tipo-doc', '#rg-num-doc');
 
+
         if (valFields1 && validDocuments1) {
             buttonEnabled("#step-1",".next-step");
         } else {
@@ -115,6 +116,15 @@ const formReg = () => {
         })
     }
     
+    form_reg.addEventListener('submit', function() {
+        const response = grecaptcha.getResponse();
+
+        if (response.length == 0) {
+            document.getElementById("g-recaptcha-error").innerHTML = "Debe marcar esta casilla";
+            return false;
+        }
+        return true;
+    })
     
 }
 

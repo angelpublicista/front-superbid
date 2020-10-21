@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualización documentos | Superbid</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     {{>partials/header}}
@@ -39,5 +40,10 @@
     </main>
 
     {{>partials/footer}}
+    <script>
+        function verifyCaptcha(){
+            document.getElementById("g-recaptcha-error").innerHTML = "";
+        }
+    </script>
 </body>
 </html>
