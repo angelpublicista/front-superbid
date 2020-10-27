@@ -50,8 +50,8 @@
                             <select name="rg-tipo-persona" id="rg-tipo-persona"
                                 class="form-control custom-select input-required">
                                 <option value="" disabled selected>Selecciona una opción</option>
-                                <option value="p-natural">Natural</option>
-                                <option value="p-juridica">Jurídica</option>
+                                <option value="p-natural" disabled>Natural</option>
+                                <option value="p-juridica" disabled>Jurídica</option>
                             </select>
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
@@ -75,7 +75,7 @@
             <div class="step-header text-center">
                 <h3 class="sb-title-header">TIPO DE DOCUMENTOS</h3>
                 <hr class="sb-sub-divider">
-                <p class="sb-subtitle-header">Seleccione el tipo de documento(s) que desea <b>cargar</b></p>
+                <p class="sb-subtitle-header">Seleccione la etapa del proceso para la cual desea <b>cargar</b> documentos</p>
             </div>
             <div class="sb-step-body mt-5 sb-opt-files">
                 <div class="row text-center justify-content-center">
@@ -184,6 +184,7 @@
                     <div class="form-group mt-3 position-relative">
                         <label for="rg-nombre-subasta">Nombre de la subasta</label>
                         <input type="text" class="form-control" id="rg-nombre-subasta">
+                        <small class="help-text">Debe colocar nombre, espacio y número de la subasta</small>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small class="err-message">Error message</small>

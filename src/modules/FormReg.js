@@ -1,18 +1,44 @@
 import optionFiles from './../helpers/OptionsFiles';
-import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor } from './../helpers/Validation';
+import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor, setSuccessFor } from './../helpers/Validation';
 
 const formReg = () => {
     optionFiles('.button-file');
     
     const form_reg = document.querySelector('#form-register');
     const buttons_opt = form_reg.querySelectorAll('.button-file');
+    const numDocumento = form_reg.querySelector("#rg-num-doc");
+
+    numDocumento.addEventListener('keypress', e => {
+        e.preventDefault();
+        let codigoKey = e.keyCode;
+        let valorKey = String.fromCharCode(codigoKey);
+        let valor = parseInt(valorKey);
+
+        if (valor) {
+            numDocumento.value += valor;
+            setSuccessFor(numDocumento);
+            if (completeFields('#form-register #step-1', '.input-required')) {
+                buttonEnabled("#step-1",".next-step");
+            }
+            
+        }
+    });
 
     form_reg.addEventListener('change', function(){
-        const tipoDocumento = document.querySelector("#rg-tipo-doc");
-        const tipoPersona = document.querySelector("#rg-tipo-persona");
+        const tipoDocumento = form_reg.querySelector("#rg-tipo-doc");
+        const tipoPersona = form_reg.querySelector("#rg-tipo-persona");
 
+        // Selección según tipo de documento
         if (tipoDocumento.options[tipoDocumento.selectedIndex].value == "nit") {
             tipoPersona.selectedIndex = "2";
+            tipoPersona.options["1"].disabled = true;
+            tipoPersona.options["2"].disabled = false;
+            setSuccessFor(tipoPersona);
+        } else if(tipoDocumento.options[tipoDocumento.selectedIndex].value == "cedula-ciudadania"){
+            tipoPersona.selectedIndex = "1";
+            tipoPersona.options["1"].disabled = false;
+            tipoPersona.options["2"].disabled = true;
+            setSuccessFor(tipoPersona);
         }
 
         const registro = document.getElementById('campos-registro');
@@ -40,8 +66,8 @@ const formReg = () => {
         const valFields1 = completeFields('#form-register #step-1', '.input-required');
         const validDocuments1 = isDocumentValid('#rg-tipo-doc', '#rg-num-doc');
 
-
         if (valFields1 && validDocuments1) {
+            console.log("Todo válido");
             buttonEnabled("#step-1",".next-step");
         } else {
             buttonDisabled("#step-1",".next-step");

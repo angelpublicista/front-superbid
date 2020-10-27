@@ -32,8 +32,6 @@ export const setErrorFor = (input, message) => {
 
 export const setSuccessFor = (input) => {
   const formGroup = input.parentElement;
-  const small = formGroup.querySelector("small");
-
   //Add error
   formGroup.classList.add("success");
   formGroup.classList.remove("error");
@@ -159,3 +157,7 @@ export const activeFiles = (files) => {
     }
   }
 };
+
+export const onlyNumbers = (e) => {
+  console.log("Evento keypress");
+}
