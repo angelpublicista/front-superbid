@@ -11,7 +11,7 @@ const formUpt = () => {
             let codigoKey = e.which;
             let valorKey = String.fromCharCode(codigoKey);
             let valor = parseInt(valorKey);
-            if (valor) {
+            if (valor || valorKey == "0") {
                 upt_numDocumento.value += valor;
                 setSuccessFor(upt_numDocumento);
                 if (completeFields('#form-update #step-1', '.input-required')) {
@@ -27,7 +27,7 @@ const formUpt = () => {
             let valorKey = String.fromCharCode(codigoKey);
             let valor = parseInt(valorKey);
     
-            if (valor) {
+            if (valor || valorKey == "0") {
                 upt_numDocumento.value += valor;
                 setSuccessFor(upt_numDocumento);
                 if (completeFields('#form-update #step-1', '.input-required')) {

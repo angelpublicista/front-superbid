@@ -35,6 +35,11 @@ module.exports = {
             template: './src/error.handlebars'
         }),
 
+        new HtmlWebpackPlugin({
+            filename: 'politicas-de-privacidad.html',
+            template: './src/politicas-de-privacidad.handlebars'
+        }),
+
         // new HtmlWebpackPlugin({
         //     filename: 'blog.html',
         //     template: './src/templates/blog.handlebars'

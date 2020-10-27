@@ -14,7 +14,8 @@ const formReg = () => {
             let codigoKey = e.which;
             let valorKey = String.fromCharCode(codigoKey);
             let valor = parseInt(valorKey);
-            if (valor) {
+            
+            if (valor || valorKey == "0") {
                 numDocumento.value += valor;
                 setSuccessFor(numDocumento);
                 if (completeFields('#form-register #step-1', '.input-required')) {
@@ -30,7 +31,7 @@ const formReg = () => {
             let valorKey = String.fromCharCode(codigoKey);
             let valor = parseInt(valorKey);
     
-            if (valor) {
+            if (valor || valorKey == "0") {
                 numDocumento.value += valor;
                 setSuccessFor(numDocumento);
                 if (completeFields('#form-register #step-1', '.input-required')) {
@@ -92,7 +93,6 @@ const formReg = () => {
         const validDocuments1 = isDocumentValid('#rg-tipo-doc', '#rg-num-doc');
 
         if (valFields1 && validDocuments1) {
-            console.log("Todo válido");
             buttonEnabled("#step-1",".next-step");
         } else {
             buttonDisabled("#step-1",".next-step");
@@ -167,15 +167,15 @@ const formReg = () => {
         })
     }
     
-    form_reg.addEventListener('submit', function() {
-        const response = grecaptcha.getResponse();
+    // form_reg.addEventListener('submit', function() {
+    //     const response = grecaptcha.getResponse();
 
-        if (response.length == 0) {
-            document.getElementById("g-recaptcha-error").innerHTML = "Debe marcar esta casilla";
-            return false;
-        }
-        return true;
-    })
+    //     if (response.length == 0) {
+    //         document.getElementById("g-recaptcha-error").innerHTML = "Debe marcar esta casilla";
+    //         return false;
+    //     }
+    //     return true;
+    // })
     
 }
 
