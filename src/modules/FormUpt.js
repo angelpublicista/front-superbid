@@ -14,7 +14,7 @@ const formUpt = () => {
             if (valor) {
                 upt_numDocumento.value += valor;
                 setSuccessFor(upt_numDocumento);
-                if (completeFields('#form-register #step-1', '.input-required')) {
+                if (completeFields('#form-update #step-1', '.input-required')) {
                     buttonEnabled("#form-update #step-1",".next-step");
                 }
             }
@@ -30,7 +30,7 @@ const formUpt = () => {
             if (valor) {
                 upt_numDocumento.value += valor;
                 setSuccessFor(upt_numDocumento);
-                if (completeFields('#form-register #step-1', '.input-required')) {
+                if (completeFields('#form-update #step-1', '.input-required')) {
                     buttonEnabled("#form-update #step-1",".next-step");
                 }
                 

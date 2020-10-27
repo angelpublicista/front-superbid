@@ -15,20 +15,20 @@
             <div class="sb-action-buttons py-5">
                 <div class="container">
                     <h3 class="text-center text-secondary font-weight-bold my-4">¿Qué desea realizar hoy?</h3>
-                    <div class="d-flex justify-content-center">
-                        <button class="m-4 button-form" data-form="#form-register" data-aos="fade-right" data-aos-duration="1500">
+                    <div class="d-flex justify-content-center wrapper-buttons">
+                        <a href="#sb-action-form" class="m-4 button-form" data-form="#form-register" data-aos="fade-right" data-aos-duration="1500">
                             <img src="static/add-doc.svg" alt=""><br><br>
-                            <a href="#" class="btn btn-primary rounded-pill">Cargar documentos</a>
-                        </button>
-                        <button class="m-4 button-form" data-form="#form-update" data-aos="fade-left" data-aos-duration="1500">
+                            <button class="btn btn-primary rounded-pill">Cargar documentos</button>
+                        </a href="#">
+                        <a href="#sb-action-form" class="m-4 button-form" data-form="#form-update" data-aos="fade-left" data-aos-duration="1500">
                             <img src="static/update-doc.svg" alt=""><br><br>
-                            <a href="#" class="btn btn-primary rounded-pill">Actualizar documentos</a>
-                        </button>
+                            <button class="btn btn-primary rounded-pill">Actualizar documentos</button>
+                        </a href="#">
                     </div>
                 </div>
             </div>
 
-            <div class="sb-action-form  py-5">
+            <div class="sb-action-form  py-5" id="sb-action-form">
                 <div class="container">
                     <div class="box-form" data-aos="fade-up" data-aos-duration="1500">
                         {{>partials/form-register}}
