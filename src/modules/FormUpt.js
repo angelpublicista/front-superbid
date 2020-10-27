@@ -1,9 +1,42 @@
-import optionFiles from './../helpers/OptionsFiles';
-import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor } from './../helpers/Validation';
+import {completeFields, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor, setSuccessFor } from './../helpers/Validation';
 
 const formUpt = () => {
     //progressBar("#form-update");
     const form_upt = document.getElementById("form-update");
+    const upt_numDocumento = form_upt.querySelector("#upt-num-doc");
+
+    if (screen.width < 768) {
+        upt_numDocumento.addEventListener('input', e => {
+            e.preventDefault();
+            let codigoKey = e.which;
+            let valorKey = String.fromCharCode(codigoKey);
+            let valor = parseInt(valorKey);
+            if (valor) {
+                upt_numDocumento.value += valor;
+                setSuccessFor(upt_numDocumento);
+                if (completeFields('#form-register #step-1', '.input-required')) {
+                    buttonEnabled("#form-update #step-1",".next-step");
+                }
+            }
+        });
+    } else {
+        upt_numDocumento.addEventListener('keypress', e => {
+        
+            e.preventDefault();
+            let codigoKey = e.which;
+            let valorKey = String.fromCharCode(codigoKey);
+            let valor = parseInt(valorKey);
+    
+            if (valor) {
+                upt_numDocumento.value += valor;
+                setSuccessFor(upt_numDocumento);
+                if (completeFields('#form-register #step-1', '.input-required')) {
+                    buttonEnabled("#form-update #step-1",".next-step");
+                }
+                
+            }
+        });
+    }
 
     form_upt.addEventListener('change', function(){
         const upt_val_fields1 = completeFields('#form-update #step-1', '.input-required');
@@ -16,11 +49,23 @@ const formUpt = () => {
         const upt_camara_comercio = upt_registro.querySelector('.wrap-camara-comercio');
         const upt_rep_legal = upt_registro.querySelector('.wrap-rep-legal');
 
-        
+        // Selección según tipo de documento
         if (upt_tipoDocumento.options[upt_tipoDocumento.selectedIndex].value == "nit") {
             upt_tipoPersona.selectedIndex = "2";
+            upt_tipoPersona.options["1"].disabled = true;
+            upt_tipoPersona.options["2"].disabled = false;
+            setSuccessFor(upt_tipoPersona);
+        } else if(upt_tipoDocumento.options[upt_tipoDocumento.selectedIndex].value == "cedula-ciudadania"){
+            upt_tipoPersona.selectedIndex = "1";
+            upt_tipoPersona.options["1"].disabled = false;
+            upt_tipoPersona.options["2"].disabled = true;
+            setSuccessFor(upt_tipoPersona);
+        } else {
+            upt_tipoPersona.options["1"].disabled = false;
+            upt_tipoPersona.options["2"].disabled = false;
         }
 
+        //Selección documentos, según tipo de persona
         if (upt_tipoPersona.selectedIndex == "1") {
             upt_camara_comercio.classList.remove('input-required');
             upt_rep_legal.classList.remove('input-required');
@@ -38,7 +83,9 @@ const formUpt = () => {
 
         }
 
-        if (upt_val_fields1) {
+        const upt_validDocuments1 = isDocumentValid('#upt-tipo-doc', '#upt-num-doc');
+
+        if (upt_val_fields1 && upt_validDocuments1) {
             buttonEnabled("#form-update #step-1",".next-step");
         } else {
             buttonDisabled("#form-update #step-1",".next-step");

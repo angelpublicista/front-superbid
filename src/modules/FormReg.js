@@ -60,8 +60,12 @@ const formReg = () => {
             tipoPersona.options["1"].disabled = false;
             tipoPersona.options["2"].disabled = true;
             setSuccessFor(tipoPersona);
+        } else {
+            tipoPersona.options["1"].disabled = false;
+            tipoPersona.options["2"].disabled = false;
         }
 
+        //Selección documentos, según tipo de persona
         const registro = document.getElementById('campos-registro');
         const titulo_registro = registro.querySelector('.sb-title-head-docs');
         const camara_comercio = registro.querySelector('.wrap-camara-comercio');
