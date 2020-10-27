@@ -22,7 +22,7 @@ export const isActiveAll = (form_step, buttons) => {
 
 export const setErrorFor = (input, message) => {
   const formGroup = input.parentElement;
-  const small = formGroup.querySelector("small");
+  const small = formGroup.querySelector(".err-message");
 
   //Add error
   small.innerText = message;

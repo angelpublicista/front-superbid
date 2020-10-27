@@ -8,21 +8,42 @@ const formReg = () => {
     const buttons_opt = form_reg.querySelectorAll('.button-file');
     const numDocumento = form_reg.querySelector("#rg-num-doc");
 
-    numDocumento.addEventListener('keypress', e => {
-        e.preventDefault();
-        let codigoKey = e.keyCode;
-        let valorKey = String.fromCharCode(codigoKey);
-        let valor = parseInt(valorKey);
-
-        if (valor) {
-            numDocumento.value += valor;
-            setSuccessFor(numDocumento);
-            if (completeFields('#form-register #step-1', '.input-required')) {
-                buttonEnabled("#step-1",".next-step");
+    if (screen.width < 768) {
+        numDocumento.addEventListener('input', e => {
+            e.preventDefault();
+            let codigoKey = e.which;
+            let valorKey = String.fromCharCode(codigoKey);
+            let valor = parseInt(valorKey);
+            if (valor) {
+                numDocumento.value += valor;
+                setSuccessFor(numDocumento);
+                if (completeFields('#form-register #step-1', '.input-required')) {
+                    buttonEnabled("#step-1",".next-step");
+                }
             }
-            
-        }
-    });
+        });
+    } else {
+        numDocumento.addEventListener('keypress', e => {
+        
+            e.preventDefault();
+            let codigoKey = e.which;
+            let valorKey = String.fromCharCode(codigoKey);
+            let valor = parseInt(valorKey);
+    
+            if (valor) {
+                numDocumento.value += valor;
+                setSuccessFor(numDocumento);
+                if (completeFields('#form-register #step-1', '.input-required')) {
+                    buttonEnabled("#step-1",".next-step");
+                }
+                
+            }
+        });
+    }
+
+    
+
+    
 
     form_reg.addEventListener('change', function(){
         const tipoDocumento = form_reg.querySelector("#rg-tipo-doc");

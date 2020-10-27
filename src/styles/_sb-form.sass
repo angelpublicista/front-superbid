@@ -125,8 +125,12 @@
                 color: $danger
             &.fa-check-circle
                 color: $success
-        small
+        small.err-message
             visibility: hidden
+        small.help-text
+            color: #757575
+            .example
+                color: $secondary
         &.success
             .form-control
                 border: 2px solid $success
@@ -137,7 +141,7 @@
                 border: 2px solid $danger
             .fa-exclamation-circle
                 visibility: visible
-            small
+            .err-message
                 visibility: visible
                 color: $danger
 .sb-step-footer
