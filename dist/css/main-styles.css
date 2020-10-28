@@ -17182,3 +17182,15 @@ h1 {
   margin: 1em auto;
   border-radius: 50px;
 }
+
+.page-privacy-policy .sb-main h1 {
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+.page-privacy-policy .sb-main p {
+  color: #353535;
+  font-size: 0.9em;
+}
+.page-privacy-policy .sb-main h5 {
+  font-size: 1em;
+}
