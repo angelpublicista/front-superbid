@@ -24,6 +24,6 @@ AOS.init();
 
 formReg();
 formUpt();
-$('.button-file').tooltip();
+$('.button-tooltip').tooltip();
 
 toggleForms('.button-form', '.sb-form');
