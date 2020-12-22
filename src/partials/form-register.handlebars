@@ -79,6 +79,12 @@
             </div>
             <div class="sb-step-body mt-5 sb-opt-files">
                 <div class="row text-center justify-content-center">
+                    <div class="custom-control custom-radio custom-control-inline d-flex flex-column mx-5 button-tooltip" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Creación de cliente">
+                        <label class="label-img" for="rg-opt-creacion"><i class="far fa-file-alt"></i></label>
+                        <input type="radio" id="rg-opt-creacion" name="rg-type-document" class="custom-control-input"
+                            value="registro" data-fields="campos-registro">
+                        <label class="custom-control-label" for="rg-opt-creacion">Creación de cliente</label>
+                    </div>
                     <div class="custom-control custom-radio custom-control-inline d-flex flex-column mx-5 button-tooltip" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Soy nuevo y quiero activar mi registro">
                         <label class="label-img" for="rg-opt-registro"><i class="far fa-file-alt"></i></label>
                         <input type="radio" id="rg-opt-registro" name="rg-type-document" class="custom-control-input"
@@ -124,6 +130,46 @@
                 </p>
             </div>
             <div class="sb-step-body mt-5 sb-ind-files">
+                <div class="campos-creacion" id="campos-creacion">
+                    <div class="sb-docs sb-docs-registro">
+                        <h3 class="sb-title-head-docs">Documentos de creación de cliente</h3>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-3">
+                                <div class="sb-group-file position-relative text-center">
+                                    <input type="file" accept="image/jpeg,image/jpg,image/png, .pdf" id="rg-field-creacion-cliente" class="sb-input-file input-required" name="rg-field-creacion-cliente">
+                                    <div class="icon-file">
+                                        <i class="fas fa-file"></i>
+                                        <span class="sb-name-file"></span>
+                                    </div>
+                                    <label for="rg-field-creacion-cliente" class="mt-5">Formato Creación cliente</label>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-3">
+                                <div class="sb-group-file position-relative text-center">
+                                    <input type="file" accept="image/jpeg,image/jpg,image/png, .pdf" id="rg-field-anexo-1" class="sb-input-file" name="rg-field-anexo-1">
+                                    <div class="icon-file">
+                                        <i class="fas fa-file"></i>
+                                        <span class="sb-name-file"></span>
+                                    </div>
+                                    <label for="rg-field-anexo-1" class="mt-5">Documentos Anexos 1</label>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-3 wrap-camara-comercio">
+                                <div class="sb-group-file position-relative text-center">
+                                    <input type="file" accept="image/jpeg,image/jpg,image/png, .pdf" id="rg-field-anexo-2" class="sb-input-file" name="rg-field-anexo-2">
+                                    <div class="icon-file">
+                                        <i class="fas fa-file"></i>
+                                        <span class="sb-name-file"></span>
+                                    </div>
+                                    <label for="rg-field-anexo-2" class="mt-5">Documentos Anexos 2</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="campos-registro" id="campos-registro">
                     <div class="sb-docs sb-docs-registro">
                         <h3 class="sb-title-head-docs">Documentos de registro - Persona jurídica</h3>
