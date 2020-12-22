@@ -11,12 +11,17 @@ const formUpt = () => {
             let codigoKey = e.which;
             let valorKey = String.fromCharCode(codigoKey);
             let valor = parseInt(valorKey);
-            if (valor || valorKey == "0") {
-                upt_numDocumento.value += valor;
-                setSuccessFor(upt_numDocumento);
-                if (completeFields('#form-update #step-1', '.input-required')) {
-                    buttonEnabled("#form-update #step-1",".next-step");
+
+            if(upt_numDocumento.value.length <= 9){
+                if (valor || valorKey == "0") {
+                    upt_numDocumento.value += valor;
+                    setSuccessFor(upt_numDocumento);
+                    if (completeFields('#form-update #step-1', '.input-required')) {
+                        buttonEnabled("#form-update #step-1",".next-step");
+                    }
                 }
+            } else {
+                return false
             }
         });
     } else {
@@ -27,13 +32,17 @@ const formUpt = () => {
             let valorKey = String.fromCharCode(codigoKey);
             let valor = parseInt(valorKey);
     
-            if (valor || valorKey == "0") {
-                upt_numDocumento.value += valor;
-                setSuccessFor(upt_numDocumento);
-                if (completeFields('#form-update #step-1', '.input-required')) {
-                    buttonEnabled("#form-update #step-1",".next-step");
+            if(upt_numDocumento.value.length <= 9){
+                if (valor || valorKey == "0") {
+                    upt_numDocumento.value += valor;
+                    setSuccessFor(upt_numDocumento);
+                    if (completeFields('#form-update #step-1', '.input-required')) {
+                        buttonEnabled("#form-update #step-1",".next-step");
+                    }
+                    
                 }
-                
+            } else {
+                return false
             }
         });
     }

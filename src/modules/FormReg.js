@@ -14,13 +14,18 @@ const formReg = () => {
             let codigoKey = e.which;
             let valorKey = String.fromCharCode(codigoKey);
             let valor = parseInt(valorKey);
+
             
-            if (valor || valorKey == "0") {
-                numDocumento.value += valor;
-                setSuccessFor(numDocumento);
-                if (completeFields('#form-register #step-1', '.input-required')) {
-                    buttonEnabled("#step-1",".next-step");
+            if(numDocumento.value.length <= 9){
+                if (valor || valorKey == "0") {
+                    numDocumento.value += valor;
+                    setSuccessFor(numDocumento);
+                    if (completeFields('#form-register #step-1', '.input-required')) {
+                        buttonEnabled("#step-1",".next-step");
+                    }
                 }
+            } else {
+                return false
             }
         });
     } else {
@@ -30,14 +35,17 @@ const formReg = () => {
             let codigoKey = e.which;
             let valorKey = String.fromCharCode(codigoKey);
             let valor = parseInt(valorKey);
-    
-            if (valor || valorKey == "0") {
-                numDocumento.value += valor;
-                setSuccessFor(numDocumento);
-                if (completeFields('#form-register #step-1', '.input-required')) {
-                    buttonEnabled("#step-1",".next-step");
+
+            if(numDocumento.value.length <= 9){
+                if (valor || valorKey == "0") {
+                    numDocumento.value += valor;
+                    setSuccessFor(numDocumento);
+                    if (completeFields('#form-register #step-1', '.input-required')) {
+                        buttonEnabled("#step-1",".next-step");
+                    } 
                 }
-                
+            } else {
+                return false
             }
         });
     }
