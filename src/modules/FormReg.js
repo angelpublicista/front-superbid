@@ -79,11 +79,13 @@ const formReg = () => {
         const titulo_registro = registro.querySelector('.sb-title-head-docs');
         const camara_comercio = registro.querySelector('.wrap-camara-comercio');
         const rep_legal = registro.querySelector('.wrap-rep-legal');
+        const doc_identidad = registro.querySelector('.wrap-doc-identidad');
 
         if (tipoPersona.selectedIndex == "1") {
             camara_comercio.classList.remove('input-required');
             rep_legal.classList.remove('input-required');
-
+            
+            doc_identidad.style.display ="flex";
             camara_comercio.style.display = "none";
             rep_legal.style.display = "none";
             titulo_registro.innerText = "Documentos de registro - Persona natural";
@@ -91,6 +93,7 @@ const formReg = () => {
             camara_comercio.classList.add('input-required');
             rep_legal.classList.add('input-required');
 
+            doc_identidad.style.display ="none";
             camara_comercio.style.display = "flex";
             rep_legal.style.display = "flex";
             titulo_registro.innerText = "Documentos de registro - Persona jurídica";
@@ -174,16 +177,6 @@ const formReg = () => {
             
         })
     }
-    
-    // form_reg.addEventListener('submit', function() {
-    //     const response = grecaptcha.getResponse();
-
-    //     if (response.length == 0) {
-    //         document.getElementById("g-recaptcha-error").innerHTML = "Debe marcar esta casilla";
-    //         return false;
-    //     }
-    //     return true;
-    // })
     
 }
 
