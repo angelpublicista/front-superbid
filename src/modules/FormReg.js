@@ -1,58 +1,13 @@
 import optionFiles from './../helpers/OptionsFiles';
-import { isActive, completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor, setSuccessFor } from './../helpers/Validation';
+import { completeFields, isActiveAll, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setSuccessFor, inputDocument, setErrorFor } from './../helpers/Validation';
 
 const formReg = () => {
     optionFiles('.button-file');
     
     const form_reg = document.querySelector('#form-register');
     const buttons_opt = form_reg.querySelectorAll('.button-file');
-    const numDocumento = form_reg.querySelector("#rg-num-doc");
 
-    if (screen.width < 768) {
-        numDocumento.addEventListener('input', e => {
-            e.preventDefault();
-            let codigoKey = e.which;
-            let valorKey = String.fromCharCode(codigoKey);
-            let valor = parseInt(valorKey);
-
-            
-            if(numDocumento.value.length <= 9){
-                if (valor || valorKey == "0") {
-                    numDocumento.value += valor;
-                    setSuccessFor(numDocumento);
-                    if (completeFields('#form-register #step-1', '.input-required')) {
-                        buttonEnabled("#step-1",".next-step");
-                    }
-                }
-            } else {
-                return false
-            }
-        });
-    } else {
-        numDocumento.addEventListener('keypress', e => {
-        
-            e.preventDefault();
-            let codigoKey = e.which;
-            let valorKey = String.fromCharCode(codigoKey);
-            let valor = parseInt(valorKey);
-
-            if(numDocumento.value.length <= 9){
-                if (valor || valorKey == "0") {
-                    numDocumento.value += valor;
-                    setSuccessFor(numDocumento);
-                    if (completeFields('#form-register #step-1', '.input-required')) {
-                        buttonEnabled("#step-1",".next-step");
-                    } 
-                }
-            } else {
-                return false
-            }
-        });
-    }
-
-    
-
-    
+    inputDocument('#form-register #rg-num-doc', '#form-register #step-1', 9);
 
     form_reg.addEventListener('change', function(){
         const tipoDocumento = form_reg.querySelector("#rg-tipo-doc");
@@ -100,13 +55,14 @@ const formReg = () => {
 
         }
 
+        // Validation step 1
         const valFields1 = completeFields('#form-register #step-1', '.input-required');
-        const validDocuments1 = isDocumentValid('#rg-tipo-doc', '#rg-num-doc');
+        const validDocuments1 = isDocumentValid('#form-register #rg-tipo-doc', '#form-register #rg-num-doc');
 
         if (valFields1 && validDocuments1) {
-            buttonEnabled("#step-1",".next-step");
+            buttonEnabled("#form-register #step-1",".next-step");
         } else {
-            buttonDisabled("#step-1",".next-step");
+            buttonDisabled("#form-register #step-1",".next-step");
         }
 
 
@@ -116,17 +72,38 @@ const formReg = () => {
         for (const field of inputRadio) {
             const customRadioCheck = field.parentElement;
             const activeFields = field.dataset.fields;
-            const subasta = document.querySelector(`#${activeFields} #rg-nombre-subasta`);
+            const subasta = form_reg.querySelector(`#${activeFields} #rg-nombre-subasta`);
+            const nombreCliente = form_reg.querySelector(`#${activeFields} #rg-nombre-empresa`);
+
+            
             if (field.checked) {
                 customRadioCheck.classList.add("success");
                 document.querySelector(`#${activeFields}`).classList.remove("d-none");
+
+                if(nombreCliente && activeFields == "campos-creacion"){
+                    nombreCliente.classList.add("input-required");
+                    nombreCliente.required = true;
+
+                    if(nombreCliente.value > 0){
+                        setSuccessFor(nombreCliente)
+                    } else {
+                        setErrorFor(nombreCliente, "Debe completar este campo")
+                    }
+                }
+
                 if (subasta) {
                     subasta.classList.add("input-required");
                     subasta.required = true;
                     subasta.setAttribute('name', 'rg-nombre-subasta');
+
+                    if(subasta.value > 0){
+                        setSuccessFor(subasta)
+                    } else {
+                        setErrorFor(subasta, "Debe completar este campo")
+                    }
                 }
                 
-                buttonEnabled("#step-2",".next-step");
+                buttonEnabled("#form-register #step-2",".next-step");
             } else {
                 document.querySelector(`#${activeFields}`).classList.add("d-none");
                 if (subasta) {
@@ -134,15 +111,20 @@ const formReg = () => {
                     subasta.required = false;
                     subasta.removeAttribute('name');
                 }
+
+                if(nombreCliente){
+                    nombreCliente.classList.remove("input-required");
+                    nombreCliente.required = false;
+                }
+
                 customRadioCheck.classList.remove("success");
             }
             
         }
-
+        
+        // Validation step 3
         activeFiles('.sb-group-file');
-        
-        const valFields3 = completeFields('#step-3', '.input-required');
-        
+        const valFields3 = completeFields('#form-register #step-3', '.input-required');
 
         if(valFields3 && isFileUpload('.sb-group-file')){
             buttonEnabled("#form-register #step-3",".next-step");
@@ -153,8 +135,8 @@ const formReg = () => {
     })
 
     for (const button of buttons_opt) {
-        let alerts2 = document.querySelector("#step-2 .alerts");
-        let buttonNext2 = document.querySelector('#step-2 .next-step');
+        let alerts2 = document.querySelector("#form-register #step-2 .alerts");
+        let buttonNext2 = document.querySelector('#form-register #step-2 .next-step');
 
         button.addEventListener('click', function(e) {
             e.preventDefault();

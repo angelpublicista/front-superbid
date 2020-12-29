@@ -37,7 +37,7 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="rg-num-doc">Número de documento</label>
-                            <input type="number" name="rg-num-doc" id="rg-num-doc" class="form-control input-required">
+                            <input type="number" name="rg-num-doc" id="rg-num-doc" min="1" class="form-control input-required">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small class="err-message">Error message</small>
@@ -131,6 +131,13 @@
             </div>
             <div class="sb-step-body mt-5 sb-ind-files">
                 <div class="campos-creacion" id="campos-creacion">
+                    <div class="form-group mt-3 position-relative">
+                        <label for="rg-nombre-empresa">Nombre de empresa</label>
+                        <input type="text" class="form-control input-required" id="rg-nombre-empresa" name="rg-nombre-empresa">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="err-message">Error message</small>
+                    </div>
                     <div class="sb-docs sb-docs-creacion">
                         <h3 class="sb-title-head-docs">Documentos de creación de cliente</h3>
                         <div class="row mt-3">
@@ -423,9 +430,6 @@
                             privacidad</a></label>
                 </div>
             </div>
-            {{!-- <div class="g-recaptcha" data-sitekey="6Ldg5tkZAAAAAKBr5CLoqr6iFFVY3gqjm8GriXTT" data-callback="verifyCaptcha"></div>
-            <div id="g-recaptcha-error"></div>
-      <br/> --}}
             <div class="sb-step-footer d-flex justify-content-between mt-5">
                 <button type="button" class="step-button step-button-back btn btn-outline-primary rounded-pill"
                     data-to_step="2" data-step="3">Anterior</button>

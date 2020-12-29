@@ -1,51 +1,9 @@
-import {completeFields, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor, setSuccessFor } from './../helpers/Validation';
+import {completeFields, buttonEnabled, buttonDisabled, isDocumentValid, isFileUpload, activeFiles, setErrorFor, setSuccessFor, inputDocument } from './../helpers/Validation';
 
 const formUpt = () => {
-    //progressBar("#form-update");
     const form_upt = document.getElementById("form-update");
-    const upt_numDocumento = form_upt.querySelector("#upt-num-doc");
 
-    if (screen.width < 768) {
-        upt_numDocumento.addEventListener('input', e => {
-            e.preventDefault();
-            let codigoKey = e.which;
-            let valorKey = String.fromCharCode(codigoKey);
-            let valor = parseInt(valorKey);
-
-            if(upt_numDocumento.value.length <= 9){
-                if (valor || valorKey == "0") {
-                    upt_numDocumento.value += valor;
-                    setSuccessFor(upt_numDocumento);
-                    if (completeFields('#form-update #step-1', '.input-required')) {
-                        buttonEnabled("#form-update #step-1",".next-step");
-                    }
-                }
-            } else {
-                return false
-            }
-        });
-    } else {
-        upt_numDocumento.addEventListener('keypress', e => {
-        
-            e.preventDefault();
-            let codigoKey = e.which;
-            let valorKey = String.fromCharCode(codigoKey);
-            let valor = parseInt(valorKey);
-    
-            if(upt_numDocumento.value.length <= 9){
-                if (valor || valorKey == "0") {
-                    upt_numDocumento.value += valor;
-                    setSuccessFor(upt_numDocumento);
-                    if (completeFields('#form-update #step-1', '.input-required')) {
-                        buttonEnabled("#form-update #step-1",".next-step");
-                    }
-                    
-                }
-            } else {
-                return false
-            }
-        });
-    }
+    inputDocument('#form-update #upt-num-doc', '#form-update #step-1', 9);
 
     form_upt.addEventListener('change', function(){
         const upt_val_fields1 = completeFields('#form-update #step-1', '.input-required');
@@ -92,7 +50,7 @@ const formUpt = () => {
 
         }
 
-        const upt_validDocuments1 = isDocumentValid('#upt-tipo-doc', '#upt-num-doc');
+        const upt_validDocuments1 = isDocumentValid('#form-update #upt-tipo-doc', '#form-update #upt-num-doc');
 
         if (upt_val_fields1 && upt_validDocuments1) {
             buttonEnabled("#form-update #step-1",".next-step");

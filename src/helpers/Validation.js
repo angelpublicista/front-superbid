@@ -158,6 +158,48 @@ export const activeFiles = (files) => {
   }
 };
 
-export const onlyNumbers = (e) => {
-  console.log("Evento keypress");
-}
+
+export const inputDocument = (input, step, limit) => {
+  let inputDoc = document.querySelector(input);
+  let limitNumber = limit
+
+  if (screen.width < 768) {
+    inputDoc.addEventListener("input", (e) => {
+      e.preventDefault();
+      let codigoKey = e.which;
+      let valorKey = String.fromCharCode(codigoKey);
+      let valor = parseInt(valorKey);
+
+      if (inputDoc.value.length <= limitNumber) {
+        if (valor >= "0" || valorKey >= "0") {
+          inputDoc.value += valor;
+          setSuccessFor(inputDoc);
+          if (completeFields(step, ".input-required")) {
+            buttonEnabled(step, ".next-step");
+          }
+        }
+      } else {
+        return false;
+      }
+    });
+  } else {
+    inputDoc.addEventListener("keypress", (e) => {
+      e.preventDefault();
+      let codigoKey = e.which;
+      let valorKey = String.fromCharCode(codigoKey);
+      let valor = parseInt(valorKey);
+
+      if (inputDoc.value.length <= limitNumber) {
+        if (valor >= "0" || valorKey >= "0") {
+          inputDoc.value += valor;
+          setSuccessFor(inputDoc);
+          if (completeFields(step, ".input-required")) {
+            buttonEnabled(step, ".next-step");
+          }
+        }
+      } else {
+        return false;
+      }
+    });
+  }
+};

@@ -1,6 +1,6 @@
 const progressBar = (formulario) => {
   let form = document.querySelector(formulario);
-  let progressOptions = document.querySelectorAll(".sb-progressbar-option");
+  let progressOptions = form.querySelectorAll(".sb-progressbar-option");
 
   form.addEventListener("click", function (e) {
     let element = e.target;
