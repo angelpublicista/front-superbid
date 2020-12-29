@@ -84,11 +84,13 @@ const formReg = () => {
                     nombreCliente.classList.add("input-required");
                     nombreCliente.required = true;
 
-                    if(nombreCliente.value > 0){
-                        setSuccessFor(nombreCliente)
-                    } else {
-                        setErrorFor(nombreCliente, "Debe completar este campo")
-                    }
+                    nombreCliente.addEventListener('change', function() {
+                        if(this.value.length <= 0){
+                            setErrorFor(nombreCliente, "Debe completar este campo")
+                        } else {
+                            setSuccessFor(nombreCliente)
+                        }
+                    })
                 }
 
                 if (subasta) {
@@ -96,11 +98,13 @@ const formReg = () => {
                     subasta.required = true;
                     subasta.setAttribute('name', 'rg-nombre-subasta');
 
-                    if(subasta.value > 0){
-                        setSuccessFor(subasta)
-                    } else {
-                        setErrorFor(subasta, "Debe completar este campo")
-                    }
+                    subasta.addEventListener('change', function() {
+                        if(this.value.length <= 0){
+                            setErrorFor(subasta, "Debe completar este campo")
+                        } else {
+                            setSuccessFor(subasta)
+                        }
+                    })
                 }
                 
                 buttonEnabled("#form-register #step-2",".next-step");
