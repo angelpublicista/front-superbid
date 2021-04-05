@@ -22,7 +22,7 @@ export const isActiveAll = (form_step, buttons) => {
 
 export const setErrorFor = (input, message) => {
   const formGroup = input.parentElement;
-  const small = formGroup.querySelector("small");
+  const small = formGroup.querySelector(".err-message");
 
   //Add error
   small.innerText = message;
@@ -32,8 +32,6 @@ export const setErrorFor = (input, message) => {
 
 export const setSuccessFor = (input) => {
   const formGroup = input.parentElement;
-  const small = formGroup.querySelector("small");
-
   //Add error
   formGroup.classList.add("success");
   formGroup.classList.remove("error");
@@ -157,5 +155,51 @@ export const activeFiles = (files) => {
         boxNameFile.innerHTML = "";
       }
     }
+  }
+};
+
+
+export const inputDocument = (input, step, limit) => {
+  let inputDoc = document.querySelector(input);
+  let limitNumber = limit
+
+  if (screen.width < 768) {
+    inputDoc.addEventListener("input", (e) => {
+      e.preventDefault();
+      let codigoKey = e.which;
+      let valorKey = String.fromCharCode(codigoKey);
+      let valor = parseInt(valorKey);
+
+      if (inputDoc.value.length <= limitNumber) {
+        if (valor >= "0" || valorKey >= "0") {
+          inputDoc.value += valor;
+          setSuccessFor(inputDoc);
+          if (completeFields(step, ".input-required")) {
+            buttonEnabled(step, ".next-step");
+          }
+        }
+      } else {
+        return false;
+      }
+    });
+  } else {
+    inputDoc.addEventListener("keypress", (e) => {
+      e.preventDefault();
+      let codigoKey = e.which;
+      let valorKey = String.fromCharCode(codigoKey);
+      let valor = parseInt(valorKey);
+
+      if (inputDoc.value.length <= limitNumber) {
+        if (valor >= "0" || valorKey >= "0") {
+          inputDoc.value += valor;
+          setSuccessFor(inputDoc);
+          if (completeFields(step, ".input-required")) {
+            buttonEnabled(step, ".next-step");
+          }
+        }
+      } else {
+        return false;
+      }
+    });
   }
 };

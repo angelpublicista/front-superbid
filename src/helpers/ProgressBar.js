@@ -1,17 +1,19 @@
 const progressBar = (formulario) => {
   let form = document.querySelector(formulario);
-  let progressOptions = document.querySelectorAll(".sb-progressbar-option");
+  let progressOptions = form.querySelectorAll(".sb-progressbar-option");
 
   form.addEventListener("click", function (e) {
     let element = e.target;
     let isButtonNext = element.classList.contains("step-button-next");
     let isButtonBack = element.classList.contains("step-button-back");
+    let isButtonSubmit = element.classList.contains("button-submit");
     if (isButtonNext || isButtonBack) {
-      let currentStep = document.getElementById("step-" + element.dataset.step);
-      let jumpStep = document.getElementById("step-" + element.dataset.to_step);
+      if (isButtonSubmit) {
+        return;
+      }
 
-      let id_step = currentStep.getAttribute("id");
-      let state = currentStep.querySelector(".step-button-next");
+      let currentStep = form.querySelector("#step-" + element.dataset.step);
+      let jumpStep = form.querySelector("#step-" + element.dataset.to_step);
 
       currentStep.addEventListener("animationend", function callback() {
         currentStep.classList.remove("active");

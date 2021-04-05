@@ -13,6 +13,7 @@ $success: #019F79
 /*Custom sass*/
 @import "general-styles"
 @import "sb-form"
+@import responsive
 
 .sb-header
     .nav-link
@@ -29,7 +30,7 @@ h1
     .sb-desc
         color: white
         opacity: .9
-        font-size: 1.1em
+        font-size: 1em
     .sb-down
         bottom: -20px
         .button-down
@@ -39,6 +40,8 @@ h1
             color: white
             font-size: 1.5em
             line-height: 0
+    .sb-title
+        font-size: 1.5em
 
 .sb-box-instruct
     background-color: rgba(#000, .2)
@@ -52,14 +55,18 @@ h1
         border: 1px solid rgba(#fff, .2)
 
 .sb-action-buttons
-    button
+    a
+        text-align: center
         border: none
         background-color: transparent
         outline: 0px
-        img
-            transition: all .3s
-        &:hover img, &.active img
+        .btn
             opacity: .5
+        img
+            opacity: .5
+            transition: all .3s
+        &:hover img, &:hover .btn, &.active img, &.active .btn
+            opacity: 1
         
 
 .sb-top-footer
@@ -79,6 +86,9 @@ h1
     .icon-check
         font-size: 10em
         color: #019F79
+    .icon-error
+        font-size: 10em
+        color: $danger
     .sb-title
         @include titleHead($color: $secondary, $t-transform: uppercase)
 
@@ -87,3 +97,13 @@ h1
         width: 50px
         margin: 1em auto
         border-radius: 50px
+.page-privacy-policy
+    .sb-main
+        h1
+            font-size: 1.3em
+            margin-bottom: 1em
+        p
+            color: #353535
+            font-size: .9em
+        h5
+            font-size: 1em
