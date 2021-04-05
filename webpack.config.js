@@ -22,22 +22,26 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/index.handlebars'
+            template: './src/index.handlebars',
+            minify: false
         }),
 
         new HtmlWebpackPlugin({
             filename: 'gracias.html',
-            template: './src/gracias.handlebars'
+            template: './src/gracias.handlebars',
+            minify: false
         }),
 
         new HtmlWebpackPlugin({
             filename: 'error.html',
-            template: './src/error.handlebars'
+            template: './src/error.handlebars',
+            minify: false
         }),
 
         new HtmlWebpackPlugin({
             filename: 'politicas-de-privacidad.html',
-            template: './src/politicas-de-privacidad.handlebars'
+            template: './src/politicas-de-privacidad.handlebars',
+            minify: false
         }),
 
         // new HtmlWebpackPlugin({
