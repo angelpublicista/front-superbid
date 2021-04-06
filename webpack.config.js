@@ -44,21 +44,6 @@ module.exports = {
             minify: false
         }),
 
-        // new HtmlWebpackPlugin({
-        //     filename: 'blog.html',
-        //     template: './src/templates/blog.handlebars'
-        // }),
-
-        // new HtmlWebpackPlugin({
-        //     filename: 'header-logo-right.html',
-        //     template: './src/templates/template-header-logo-right.handlebars'
-        // }),
-
-        // new HtmlWebpackPlugin({
-        //     filename: 'header-logo-center.html',
-        //     template: './src/templates/template-header-logo-center.handlebars'
-        // }),
-
         new MiniCssExtractPlugin({
             filename: 'css/[name]-styles.css'
         }),
@@ -74,7 +59,7 @@ module.exports = {
             { test: /\.handlebars/, loader: "handlebars-loader" },
 
             {
-                test: /\.(svg|eot|woff|woff2|ttf)$/,
+                test: /\.(eot|woff|woff2|ttf)$/,
                 loader: 'file-loader',
                 options:{
                     outputPath: 'fonts'

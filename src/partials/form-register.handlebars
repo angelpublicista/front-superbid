@@ -86,7 +86,7 @@
                 <div class="row text-center justify-content-center">
                     {{!-- Opcion REGISTROS --}}
                     <div class="col custom-control custom-radio custom-control-inline d-flex flex-column mx-5 mx-lg-3 button-tooltip"
-                        data-toggle="tooltip" data-placement="bottom" data-html="true"
+                        data-toggle="tooltip" data-placement="left" data-html="true"
                         title="Soy nuevo y quiero activar mi registro">
                         <label class="label-img" for="rg-opt-registro"><i class="far fa-file-alt"></i></label>
                         <input type="radio" id="rg-opt-registro" name="rg-type-document" class="custom-control-input"
@@ -112,7 +112,7 @@
                         <label class="label-img" for="rg-opt-creacion"><i class="far fa-file-alt"></i></label>
                         <input type="radio" id="rg-opt-creacion" name="rg-type-document" class="custom-control-input"
                             value="creacion" data-fields="campos-creacion">
-                        <label class="custom-control-label" for="rg-opt-creacion">Creación de cliente</label>
+                        <label class="custom-control-label" for="rg-opt-creacion">Creación cliente</label>
                         <i class="custom-radio-desc">Según condiciones subasta</i>
                     </div>
 
@@ -129,7 +129,7 @@
 
                     {{!-- Opcion RETIROS --}}
                     <div class="col custom-control custom-radio custom-control-inline d-flex flex-column mx-5 mx-lg-3 button-tooltip"
-                        data-toggle="tooltip" data-placement="bottom" data-html="true"
+                        data-toggle="tooltip" data-placement="right" data-html="true"
                         title="Quiero cargar la planilla de aportes, póliza, RTM o SOAT para finalizar el proceso de retiros">
                         <label class="label-img" for="rg-opt-retiros"><i class="far fa-file-alt"></i></label>
                         <input type="radio" id="rg-opt-retiros" name="rg-type-document" class="custom-control-input"
@@ -310,11 +310,8 @@
                 <div class="campos-pagos d-none" id="campos-pagos">
                     <div class="form-group mt-3 position-relative">
                         <label for="rg-nombre-subasta">Nombre de la subasta</label>
-                        <select id="rg-nombre-subasta" class="form-control custom-select" name="rg-nombre-subasta" required>
+                        <select id="rg-nombre-subasta" class="form-control custom-select rg-nombre-subasta" data-folder="Pagos" required>
                             <option value="" selected disabled>Seleccione una opción</option>
-                            <option value="">Item 1</option>
-                            <option value="">Item 2</option>
-                            <option value="">Item 3</option>
                         </select>
                     </div>
                     <div class="sb-docs sb-docs-pagos">
@@ -392,11 +389,8 @@
 
                 <div class="campos-garantia mt-4 d-none" id="campos-garantia">
                     <div class="form-group mt-3 position-relative">
-                        <select id="rg-nombre-subasta" class="form-control custom-select" name="rg-nombre-subasta" required>
+                        <select id="rg-nombre-subasta" class="form-control custom-select rg-nombre-subasta" data-folder="Garantia" required>
                             <option value="" selected disabled>Seleccione una opción</option>
-                            <option value="">Item 1</option>
-                            <option value="">Item 2</option>
-                            <option value="">Item 3</option>
                         </select>
                     </div>
                     <div class="sb-docs sb-docs-garantia">
@@ -464,11 +458,8 @@
                 <div class="campos-retiros mt-4 d-none" id="campos-retiros">
                     <div class="form-group mt-3 position-relative">
                         <label for="rg-nombre-subasta">Nombre de la subasta</label>
-                        <select id="rg-nombre-subasta" class="form-control custom-select" name="rg-nombre-subasta" required>
+                        <select id="rg-nombre-subasta" class="form-control custom-select rg-nombre-subasta" data-folder="Retiros" required>
                             <option value="" selected disabled>Seleccione una opción</option>
-                            <option value="">Item 1</option>
-                            <option value="">Item 2</option>
-                            <option value="">Item 3</option>
                         </select>
                     </div>
                     <div class="sb-docs sb-docs-retiro">
