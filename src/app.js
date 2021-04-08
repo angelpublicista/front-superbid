@@ -1,14 +1,13 @@
 // Libs
 import $ from "jquery";
 import 'bootstrap';
-import '@fortawesome/fontawesome-free/js/all.js';
-import '@fortawesome/fontawesome-free/css/all.css';
 import AOS from 'aos';
 
 //Modules
 import toggleForms from "./modules/ActiveForms";
 import formReg from "./modules/FormReg";
 import formUpt from "./modules/FormUpt";
+import getApiFolders from "./modules/ApiFolders";
 
 
 // Styles
@@ -27,3 +26,5 @@ formUpt();
 $('.button-tooltip').tooltip();
 
 toggleForms('.button-form', '.sb-form');
+
+getApiFolders();

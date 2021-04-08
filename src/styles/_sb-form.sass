@@ -26,7 +26,7 @@
             list-style: none
             margin-bottom: 2em
             counter-reset: step
-            margin-bottom: 4em
+            margin-bottom: 2em
             flex-flow: row wrap
             &-option
                 font-size: 1.2em
@@ -116,7 +116,7 @@
             color: $secondary
             font-weight: 600
             font-size: .9em
-        svg
+        i
             position: absolute
             top: 47px
             right: 45px
@@ -208,12 +208,18 @@
     label
         font-size: 15px
         cursor: pointer
+        font-weight: bold
     .label-img
         font-size: 1em
         color: #ccc
     &.success
         .label-img
             color: $secondary
+    &-desc
+        font-size: 9pt
+        font-weight: bold
+        color: #757575
+        line-height: 1.5em
 
 @keyframes scale
   from
