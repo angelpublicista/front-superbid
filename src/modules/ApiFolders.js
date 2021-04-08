@@ -1,7 +1,7 @@
 
 
 const getApiFolders = () => {
-    const fieldSubasta = document.querySelectorAll('.rg-nombre-subasta');
+    const fieldSubasta = document.querySelectorAll('.rg-api-folder');
     
     for (const field of fieldSubasta) {
         let folder = field.dataset.folder
