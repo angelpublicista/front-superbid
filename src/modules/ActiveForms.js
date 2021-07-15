@@ -7,6 +7,7 @@ const toggleForms = (buttons, forms) => {
         for (const btn of form_buttons) {
             btn.addEventListener('click', function(e) {
                 //e.preventDefault();
+
                 let form_active = btn.dataset.form;
                 for (const uni_form of forms_cont) {
                     uni_form.classList.remove('form-active')
@@ -19,6 +20,8 @@ const toggleForms = (buttons, forms) => {
 
                 document.querySelector(form_active).classList.add('form-active');
                 progressBar(form_active);
+
+                
             })
         }
     }
