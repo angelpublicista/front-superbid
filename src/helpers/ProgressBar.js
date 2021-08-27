@@ -5,7 +5,6 @@ const progressBar = (formulario) => {
   form.addEventListener("click", function (e) {
     let element = e.target;
     let isButtonNext = element.classList.contains("step-button-next");
-    let isIconNext = element.classList.contains("step-button-next i");
     let isButtonBack = element.classList.contains("step-button-back");
     let isButtonSubmit = element.classList.contains("button-submit");
     if (isButtonNext || isButtonBack) {
