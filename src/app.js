@@ -7,6 +7,7 @@ import AOS from 'aos';
 import toggleForms from "./modules/ActiveForms";
 import formReg from "./modules/FormReg";
 import formUpt from "./modules/FormUpt";
+import formWar from "./modules/FormWar";
 import getApiFolders from "./modules/ApiFolders";
 
 
@@ -17,12 +18,15 @@ import "./styles/main.sass";
 import "./static/add-doc.svg";
 import "./static/update-doc.svg";
 import "./static/logo-superbid.svg";
+import "./static/agenda.png";
+import "./static/garantia.png";
 
 
 AOS.init();
 
 formReg();
 formUpt();
+formWar();
 $('.button-tooltip').tooltip();
 
 toggleForms('.button-form', '.sb-form');

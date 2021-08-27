@@ -19,9 +19,7 @@ const toggleForms = (buttons, forms) => {
                 this.classList.add('active');
 
                 document.querySelector(form_active).classList.add('form-active');
-                progressBar(form_active);
-
-                
+                progressBar(form_active);  
             })
         }
     }

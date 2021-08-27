@@ -27,12 +27,12 @@
                             <button class="btn btn-primary rounded-pill">Actualizar documentos</button>
                         </a>
                         {{!-- Botones Garantía --}}
-                        <a href="https://forms.gle/yLCsGPTJFeaj3jCU8" target="_blank" class="m-4 button-form btn-wrr" data-aos="fade-left" data-aos-duration="1500">
-                            <i class="fab fa-wpforms"></i><br><br>
-                            <button class="btn btn-primary rounded-pill">Devolución Garantía</button>
+                        <a href="#sb-action-form" class="m-4 button-form btn-wrr" data-form="#form-warranty" data-aos="fade-left" data-aos-duration="1500">
+                            <img src="static/garantia.png" alt=""><br><br>
+                            <button class="btn btn-primary rounded-pill">Garantía</button>
                         </a>
                         <a href="https://forms.gle/mcTDmejyzPQ5wXoj6" target="_blank" class="m-4 button-form btn-wrr" data-aos="fade-left" data-aos-duration="1500">
-                            <i class="fab fa-wpforms"></i><br><br>
+                            <img src="static/agenda.png" alt=""><br><br>
                             <button class="btn btn-primary rounded-pill">Agendamiento Visita</button>
                         </a>
                     </div>
@@ -44,6 +44,7 @@
                     <div class="box-form" data-aos="fade-up" data-aos-duration="1500">
                         {{>partials/form-register}}
                         {{>partials/form-update}}
+                        {{>partials/form-warranty}}
                     </div>
                 </div>
             </div>
