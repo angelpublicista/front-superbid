@@ -21,7 +21,7 @@
                     <div class="col-12 col-md-4">
                         <button type="button" class="step-button next-step sb-opt-warranty__link step-button-next"  data-to_step="2" data-step="1">
                             <i class="fas fa-file-upload"></i>
-                            <input type="hidden" id="rg-opt-garantia" name="rg-type-document" class="custom-control-input"
+                            <input type="hidden" id="wrr-opt-garantia" name="wrr-type-document" class="custom-control-input"
                             value="garantia" data-fields="campos-garantia">
                             <span>Cargar Documentos Garantía</span>
                         </button>
@@ -40,7 +40,7 @@
             <div class="alerts"></div>
         </div>
 
-        {{!-- STEP 1 --}}
+        {{!-- STEP 2 --}}
         <div class="step mt-5" id="step-2">
             <div class="step-header text-center">
                 <h3 class="sb-title-header">INFORMACIÓN GENERAL</h3>
@@ -51,8 +51,8 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="rg-tipo-doc">Tipo de documento</label>
-                            <select name="rg-tipo-doc" id="rg-tipo-doc"
+                            <label for="wrr-tipo-doc">Tipo de documento</label>
+                            <select name="wrr-tipo-doc" id="wrr-tipo-doc"
                                 class="form-control custom-select input-required">
                                 <option value="" disabled selected>Selecciona una opción</option>
                                 <option value="cedula-ciudadania">Cédula de ciudadanía</option>
@@ -68,8 +68,8 @@
 
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="rg-num-doc">Número de documento</label>
-                            <input type="number" name="rg-num-doc" id="rg-num-doc" min="1"
+                            <label for="wrr-num-doc">Número de documento</label>
+                            <input type="number" name="wrr-num-doc" id="wrr-num-doc" min="1"
                                 class="form-control input-required">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
@@ -79,8 +79,8 @@
 
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="rg-tipo-persona">Tipo de persona</label>
-                            <select name="rg-tipo-persona" id="rg-tipo-persona"
+                            <label for="wrr-tipo-persona">Tipo de persona</label>
+                            <select name="wrr-tipo-persona" id="wrr-tipo-persona"
                                 class="form-control custom-select input-required">
                                 <option value="" disabled selected>Selecciona una opción</option>
                                 <option value="p-natural" disabled>Natural</option>
@@ -120,7 +120,7 @@
             <div class="sb-step-body mt-5 sb-ind-files">
                 <div class="campos-garantia mt-4" id="campos-garantia">
                     <div class="form-group mt-3 position-relative">
-                        <select id="rg-nombre-subasta" class="form-control custom-select rg-nombre-subasta rg-api-folder" data-folder="Garantia" required>
+                        <select id="wrr-nombre-subasta" class="form-control custom-select wrr-nombre-subasta wrr-api-folder" data-folder="Garantia" required>
                             <option value="" selected disabled>Seleccione una opción</option>
                         </select>
                     </div>
@@ -134,26 +134,26 @@
                             <div class="col-6 col-md-3">
                                 <div class="sb-group-file position-relative text-center">
                                     <input type="file" accept="image/jpeg,image/jpg,image/png, .pdf"
-                                        id="rg-field-soporte-garantia" class="sb-input-file"
-                                        name="rg-field-soporte-garantia">
+                                        id="wrr-field-soporte-garantia" class="sb-input-file"
+                                        name="wrr-field-soporte-garantia">
                                     <div class="icon-file">
                                         <i class="fas fa-file"></i>
                                         <span class="sb-name-file"></span>
                                     </div>
-                                    <label for="rg-field-soporte-garantia" class="mt-5">Soporte de garantía</label>
+                                    <label for="wrr-field-soporte-garantia" class="mt-5">Soporte de garantía</label>
                                 </div>
                             </div>
 
                             <div class="col-6 col-md-3">
                                 <div class="sb-group-file position-relative text-center">
                                     <input type="file" accept="image/jpeg,image/jpg,image/png, .pdf"
-                                        id="rg-field-certificacion-bancaria" class="sb-input-file"
-                                        name="rg-field-certificacion-bancaria">
+                                        id="wrr-field-certificacion-bancaria" class="sb-input-file"
+                                        name="wrr-field-certificacion-bancaria">
                                     <div class="icon-file">
                                         <i class="fas fa-file"></i>
                                         <span class="sb-name-file"></span>
                                     </div>
-                                    <label for="rg-field-certificacion-bancaria" class="mt-5">Certificación
+                                    <label for="wrr-field-certificacion-bancaria" class="mt-5">Certificación
                                         bancaria</label>
                                 </div>
                             </div>
@@ -161,29 +161,37 @@
                             <div class="col-6 col-md-3">
                                 <div class="sb-group-file position-relative text-center">
                                     <input type="file" accept="image/jpeg,image/jpg,image/png, .pdf"
-                                        id="rg-field-documentos-garantias" class="sb-input-file"
-                                        name="rg-field-documentos-garantias">
+                                        id="wrr-field-documentos-garantias" class="sb-input-file"
+                                        name="wrr-field-documentos-garantias">
                                     <div class="icon-file">
                                         <i class="fas fa-file"></i>
                                         <span class="sb-name-file"></span>
                                     </div>
-                                    <label for="rg-field-documentos-garantias" class="mt-5">Documentos garantias</label>
+                                    <label for="wrr-field-documentos-garantias" class="mt-5">Documentos garantias</label>
                                 </div>
                             </div>
 
                             <div class="col-6 col-md-3">
                                 <div class="sb-group-file position-relative text-center">
                                     <input type="file" accept="image/jpeg,image/jpg,image/png, .pdf"
-                                        id="rg-field-parafiscales" class="sb-input-file" name="rg-field-parafiscales">
+                                        id="wrr-field-parafiscales" class="sb-input-file" name="wrr-field-parafiscales">
                                     <div class="icon-file">
                                         <i class="fas fa-file"></i>
                                         <span class="sb-name-file"></span>
                                     </div>
-                                    <label for="rg-field-parafiscales" class="mt-5">Parafiscales (visitas)</label>
+                                    <label for="wrr-field-parafiscales" class="mt-5">Parafiscales (visitas)</label>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                 <div class="form-group form-check mt-4 text-dark">
+                    <input type="checkbox" class="form-check-input input-required" id="privacy-policy" name="privacy-policy"
+                        value="Acepto las políticas">
+                    <label class="form-check-label" for="privacy-policy">He leído y acepto las <a
+                            href="/documentos/politicas-de-privacidad.html" target="_blank">políticas de
+                            privacidad</a></label>
                 </div>
             </div>
             <div class="sb-step-footer d-flex justify-content-between mt-5">

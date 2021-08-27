@@ -7,11 +7,11 @@ const formWar = () => {
     const form_war = document.querySelector('#form-warranty');
     const buttons_opt = form_war.querySelectorAll('.button-file');
 
-    inputDocument('#form-warranty #rg-num-doc', '#form-warranty #step-2', 9);
+    inputDocument('#form-warranty #wrr-num-doc', '#form-warranty #step-2', 9);
 
     form_war.addEventListener('change', function(){
-        const tipoDocumento = form_war.querySelector("#rg-tipo-doc");
-        const tipoPersona = form_war.querySelector("#rg-tipo-persona");
+        const tipoDocumento = form_war.querySelector("#wrr-tipo-doc");
+        const tipoPersona = form_war.querySelector("#wrr-tipo-persona");
 
         // Selección según tipo de documento
         if (tipoDocumento.options[tipoDocumento.selectedIndex].value == "nit") {
@@ -29,30 +29,14 @@ const formWar = () => {
             tipoPersona.options["2"].disabled = false;
         }
 
-        //Selección documentos, según tipo de persona
-        const registro = document.getElementById('campos-registro');
-        const titulo_registro = registro.querySelector('.sb-title-head-docs');
-        const camara_comercio = registro.querySelector('.wrap-camara-comercio');
-        const rep_legal = registro.querySelector('.wrap-rep-legal');
-        const doc_identidad = registro.querySelector('.wrap-doc-identidad');
+        // Validation step 1
+        const valFields2 = completeFields('#form-warranty #step-2', '.input-required');
+        const validDocuments2 = isDocumentValid('#form-warranty #wrr-tipo-doc', '#form-warranty #wrr-num-doc');
 
-        if (tipoPersona.selectedIndex == "1") {
-            camara_comercio.classList.remove('input-required');
-            rep_legal.classList.remove('input-required');
-            
-            doc_identidad.style.display ="flex";
-            camara_comercio.style.display = "none";
-            rep_legal.style.display = "none";
-            titulo_registro.innerText = "Documentos de registro - Persona natural";
+        if (valFields2 && validDocuments2) {
+            buttonEnabled("#form-warranty #step-2",".next-step");
         } else {
-            camara_comercio.classList.add('input-required');
-            rep_legal.classList.add('input-required');
-
-            doc_identidad.style.display ="none";
-            camara_comercio.style.display = "flex";
-            rep_legal.style.display = "flex";
-            titulo_registro.innerText = "Documentos de registro - Persona jurídica";
-
+            buttonDisabled("#form-warranty #step-2",".next-step");
         }
         
         // Validation step 3
