@@ -251,6 +251,8 @@
         font-size: 5em
         color: $secondary
         pointer-events: none
+    img
+        pointer-events: none
     span
         display: block
         margin-top: 20px
@@ -260,3 +262,8 @@
     &:hover
         text-decoration: none
         opacity: .6
+
+@include media-breakpoint-down(sm)
+    .sb-opt-warranty__link
+        margin: auto
+        margin-bottom: 3em

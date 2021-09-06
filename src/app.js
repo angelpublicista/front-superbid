@@ -20,6 +20,8 @@ import "./static/update-doc.svg";
 import "./static/logo-superbid.svg";
 import "./static/agenda.png";
 import "./static/garantia.png";
+import "./static/checked-dollar-01.png";
+import "./static/icon-doc-updRecurso.svg";
 
 
 AOS.init();
