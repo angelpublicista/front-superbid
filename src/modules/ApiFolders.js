@@ -3,11 +3,14 @@
 const getApiFolders = () => {
     const fieldSubasta = document.querySelectorAll('.rg-api-folder');
     const fieldSubastaWrr = document.querySelectorAll('.wrr-api-folder');
+
+    const url_prod = "https://superbidcolombia.com/documentos"
+    const url_test = "https://superbidcolombia.com/pruebas2"
     
     if(fieldSubasta){
         for (const field of fieldSubasta) {
             let folder = field.dataset.folder
-            fetch(`https://superbidcolombia.com/documentos/api/api-folders.php?folder=${folder}`)
+            fetch(`${url_test}/api/api-folders.php?folder=${folder}`)
             .then(res => res.json())
             .then(data =>{
                 for (const item of data) {
@@ -24,7 +27,7 @@ const getApiFolders = () => {
     if(fieldSubastaWrr){
         for (const field of fieldSubastaWrr) {
             let folder = field.dataset.folder
-            fetch(`https://superbidcolombia.com/documentos/api/api-folders.php?folder=${folder}`)
+            fetch(`${url_test}/api/api-folders.php?folder=${folder}`)
             .then(res => res.json())
             .then(data =>{
                 for (const item of data) {
