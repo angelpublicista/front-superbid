@@ -6,11 +6,12 @@ const getApiFolders = () => {
 
     const url_prod = "https://superbidcolombia.com/documentos"
     const url_test = "https://superbidcolombia.com/pruebas2"
+    const url_local = "http://localhost/form-superbid"
     
     if(fieldSubasta){
         for (const field of fieldSubasta) {
             let folder = field.dataset.folder
-            fetch(`${url_test}/api/api-folders.php?folder=${folder}`)
+            fetch(`${url_local}/api/api-folders.php?folder=${folder}`)
             .then(res => res.json())
             .then(data =>{
                 for (const item of data) {
@@ -27,7 +28,7 @@ const getApiFolders = () => {
     if(fieldSubastaWrr){
         for (const field of fieldSubastaWrr) {
             let folder = field.dataset.folder
-            fetch(`${url_test}/api/api-folders.php?folder=${folder}`)
+            fetch(`${url_local}/api/api-folders.php?folder=${folder}`)
             .then(res => res.json())
             .then(data =>{
                 for (const item of data) {

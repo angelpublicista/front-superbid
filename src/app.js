@@ -22,6 +22,7 @@ import "./static/agenda.png";
 import "./static/garantia.png";
 import "./static/checked-dollar-01.png";
 import "./static/icon-doc-updRecurso.svg";
+import "./static/rolling-1s-200px.gif";
 
 
 AOS.init();
@@ -34,3 +35,7 @@ $('.button-tooltip').tooltip();
 toggleForms('.button-form', '.sb-form');
 
 getApiFolders();
+
+$('.sb-form').on('submit', function(e) {
+    $('.sb-loader-wrap').addClass('active')
+})
