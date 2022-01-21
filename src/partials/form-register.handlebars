@@ -88,17 +88,28 @@
                     <div class="col custom-control custom-radio custom-control-inline d-flex flex-column mx-5 mx-lg-3 button-tooltip"
                         data-toggle="tooltip" data-placement="left" data-html="true"
                         title="Soy nuevo y quiero activar mi registro">
-                        <label class="label-img" for="rg-opt-registro"><i class="far fa-file-alt"></i></label>
+                        <label class="label-img" for="rg-opt-registro"><i class="fas fa-user-check"></i></label>
                         <input type="radio" id="rg-opt-registro" name="rg-type-document" class="custom-control-input"
                             value="registro" data-fields="campos-registro">
                         <label class="custom-control-label" for="rg-opt-registro">Registros</label>
                         <i class="custom-radio-desc">Clientes nuevos</i>
                     </div>
 
+                    {{!-- Opcion ACTUALIZACIÓN REGISTROS --}}
+                    <div class="col custom-control custom-radio custom-control-inline d-flex flex-column mx-5 mx-lg-3 button-tooltip"
+                        data-toggle="tooltip" data-placement="left" data-html="true"
+                        title="Acá podrá actualizar el RUT o Documento de Identidad si es necesario">
+                        <label class="label-img" for="rg-opt-registro-act"><i class="fas fa-history"></i></label>
+                        <input type="radio" id="rg-opt-registro-act" name="rg-type-document" class="custom-control-input"
+                            value="registro-act" data-fields="campos-registro-act">
+                        <label class="custom-control-label" for="rg-opt-registro-act">Registros</label>
+                        <i class="custom-radio-desc">Actualización de clientes nuevos</i>
+                    </div>
+
                     {{!-- Opcion CREACIÓN DE CLIENTE --}}
                     <div class="col custom-control custom-radio custom-control-inline d-flex flex-column mx-5 mx-lg-3 button-tooltip"
                         data-toggle="tooltip" data-placement="bottom" data-html="true" title="Creación de cliente">
-                        <label class="label-img" for="rg-opt-creacion"><i class="far fa-file-alt"></i></label>
+                        <label class="label-img" for="rg-opt-creacion"><i class="fas fa-user-plus"></i></label>
                         <input type="radio" id="rg-opt-creacion" name="rg-type-document" class="custom-control-input"
                             value="creacion" data-fields="campos-creacion">
                         <label class="custom-control-label" for="rg-opt-creacion">Creación cliente</label>
@@ -109,7 +120,7 @@
                     <div class="col custom-control custom-radio custom-control-inline d-flex flex-column mx-5 mx-lg-3 button-tooltip"
                         data-toggle="tooltip" data-placement="bottom" data-html="true"
                         title="Quiero reportar el pago de mi lote, comisión, traspasos o fianza">
-                        <label class="label-img" for="rg-opt-pagos"><i class="far fa-file-alt"></i></label>
+                        <label class="label-img" for="rg-opt-pagos"><i class="fas fa-file-invoice-dollar"></i></label>
                         <input type="radio" id="rg-opt-pagos" name="rg-type-document" class="custom-control-input"
                             value="pagos" data-fields="campos-pagos">
                         <label class="custom-control-label" for="rg-opt-pagos">Pagos</label>
@@ -117,7 +128,7 @@
                     </div>
 
                     {{!-- Opcion RETIROS --}}
-                    <div class="col custom-control custom-radio custom-control-inline d-flex flex-column mx-5 mx-lg-3 button-tooltip"
+                    {{!-- <div class="col col-lg-3 custom-control custom-radio custom-control-inline d-flex flex-column mx-5 mx-lg-3 button-tooltip"
                         data-toggle="tooltip" data-placement="right" data-html="true"
                         title="Quiero cargar la planilla de aportes, póliza, RTM o SOAT para finalizar el proceso de retiros">
                         <label class="label-img" for="rg-opt-retiros"><i class="far fa-file-alt"></i></label>
@@ -125,7 +136,7 @@
                             value="retiros" data-fields="campos-retiros">
                         <label class="custom-control-label" for="rg-opt-retiros">Retiros</label>
                         <i class="custom-radio-desc">Ganadores subasta</i>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
@@ -288,6 +299,37 @@
                                         <span class="sb-name-file"></span>
                                     </div>
                                     <label for="rg-field-cedula-rep" class="mt-5">Cédula representante legal</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="campos-registro-act" id="campos-registro-act">
+                    <div class="sb-docs sb-docs-registro">
+                        <h3 class="sb-title-head-docs">Documentos de registro - Persona jurídica</h3>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-3 wrap-doc-identidad">
+                                <div class="sb-group-file position-relative text-center">
+                                    <input type="file" accept="image/jpeg,image/jpg,image/png, .pdf"
+                                        id="rg-field-documento" class="sb-input-file" name="rg-field-documento">
+                                    <div class="icon-file">
+                                        <i class="fas fa-file"></i>
+                                        <span class="sb-name-file"></span>
+                                    </div>
+                                    <label for="rg-field-documento" class="mt-5">Documento de identidad</label>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-3">
+                                <div class="sb-group-file position-relative text-center">
+                                    <input type="file" accept="image/jpeg,image/jpg,image/png, .pdf" id="rg-field-rut"
+                                        class="sb-input-file input-required" name="rg-field-rut">
+                                    <div class="icon-file">
+                                        <i class="fas fa-file"></i>
+                                        <span class="sb-name-file"></span>
+                                    </div>
+                                    <label for="rg-field-rut" class="mt-5">RUT Vigente</label>
                                 </div>
                             </div>
                         </div>
