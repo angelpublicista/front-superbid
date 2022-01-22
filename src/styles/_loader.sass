@@ -5,10 +5,11 @@
     top: 0
     left: 0
     z-index: 1040
-    background-color: rgba(#ffffff , .4)
-    display: grid
+    background-color: rgba(#ffffff , .6)
+    display: flex
     justify-content: center
     align-items: center
+    flex-direction: column
     transform: translateX(-200%)
     opacity: 0
     transition: opacity .4s
@@ -17,3 +18,7 @@
     &.active
         transform: translateX(0)
         opacity: 1
+    p
+        margin-top: 5px
+        font-weight: bold
+        color: $secondary
