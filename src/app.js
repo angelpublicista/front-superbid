@@ -28,7 +28,10 @@ import "./static/rolling-1s-200px.gif";
 AOS.init();
 
 formReg();
-formUpt();
+
+// Módulo desactivado
+// formUpt();
+
 formWar();
 $('.button-tooltip').tooltip();
 

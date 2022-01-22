@@ -23,16 +23,19 @@
                             <img src="static/add-doc.svg" alt=""><br><br>
                             <button class="btn btn-primary rounded-pill">Cargar documentos</button>
                         </a>
-                        <a href="#sb-action-form" class="m-4 button-form" data-form="#form-update" data-aos="fade-left" data-aos-duration="1500">
+
+                        {{!-- Botón desactivado --}}
+                        {{!-- <a href="#sb-action-form" class="m-4 button-form" data-form="#form-update" data-aos="fade-left" data-aos-duration="1500">
                             <img src="static/update-doc.svg" alt=""><br><br>
                             <button class="btn btn-primary rounded-pill">Actualizar documentos</button>
-                        </a>
+                        </a> --}}
+                        
                         {{!-- Botones Garantía --}}
                         <a href="#sb-action-form" class="m-4 button-form btn-wrr" data-form="#form-warranty" data-aos="fade-left" data-aos-duration="1500">
                             <img src="static/checked-dollar-01.png" alt="" width="85"><br><br>
                             <button class="btn btn-primary rounded-pill">Garantía</button>
                         </a>
-                        <a href="https://forms.gle/mcTDmejyzPQ5wXoj6" target="_blank" class="m-4 button-form btn-wrr" data-aos="fade-left" data-aos-duration="1500">
+                        <a href="https://forms.gle/mcTDmejyzPQ5wXoj6" target="_blank" class="m-4 button-form btn-wrr btn-visitas" data-aos="fade-left" data-aos-duration="1500">
                             <img src="static/agenda.png" alt=""><br><br>
                             <button class="btn btn-primary rounded-pill">Agendamiento Visita</button>
                         </a>
@@ -44,7 +47,8 @@
                 <div class="container">
                     <div class="box-form" data-aos="fade-up" data-aos-duration="1500">
                         {{>partials/form-register}}
-                        {{>partials/form-update}}
+                        {{!-- Módulo desactivado --}}
+                        {{!-- {{>partials/form-update}} --}}
                         {{>partials/form-warranty}}
                     </div>
                 </div>
