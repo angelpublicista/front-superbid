@@ -26,7 +26,7 @@
             list-style: none
             margin-bottom: 2em
             counter-reset: step
-            margin-bottom: 4em
+            margin-bottom: 2em
             flex-flow: row wrap
             &-option
                 font-size: 1.2em
@@ -116,7 +116,7 @@
             color: $secondary
             font-weight: 600
             font-size: .9em
-        svg
+        i
             position: absolute
             top: 47px
             right: 45px
@@ -208,15 +208,71 @@
     label
         font-size: 15px
         cursor: pointer
+        font-weight: bold
     .label-img
         font-size: 1em
         color: #ccc
     &.success
         .label-img
             color: $secondary
+    &-desc
+        font-size: 9pt
+        font-weight: bold
+        color: #757575
+        line-height: 1.5em
 
 @keyframes scale
   from
     transform: scale(1)
   to
     transform: scale(1.1)
+
+.btn-wrr
+    i
+        font-size: 85px
+        opacity: .6
+        transition: all .3s
+    &:hover
+        i
+            opacity: 1
+    button
+        background-color: $secondary
+        border-color: $secondary
+        &:hover
+            background-color: $secondary
+            border-color: $secondary
+.btn-visitas
+    button
+        background-color: #454545
+        border-color: #454545
+        &:hover
+            background-color: #454545
+            border-color: #454545
+    img
+        filter: grayscale(100%)
+.sb-opt-warranty__link
+    transition: all .3s
+    border: none
+    background-color: transparent !important
+    display: block
+    outline: none !important
+    i
+        font-size: 5em
+        color: $secondary
+        pointer-events: none
+    img
+        pointer-events: none
+    span
+        display: block
+        margin-top: 20px
+        color: #212529
+        font-weight: bold
+        font-size: 1.2em
+    &:hover
+        text-decoration: none
+        opacity: .6
+
+@include media-breakpoint-down(sm)
+    .sb-opt-warranty__link
+        margin: auto
+        margin-bottom: 3em

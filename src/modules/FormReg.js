@@ -36,6 +36,13 @@ const formReg = () => {
         const rep_legal = registro.querySelector('.wrap-rep-legal');
         const doc_identidad = registro.querySelector('.wrap-doc-identidad');
 
+        // Campos registro actualizacion
+        const registro_act = document.getElementById('campos-registro-act')
+        const titulo_registro_act = registro_act.querySelector('.sb-title-head-docs');
+        const camara_comercio_act = registro_act.querySelector('.wrap-camara-comercio');
+        const rep_legal_act = registro_act.querySelector('.wrap-rep-legal');
+        const doc_identidad_act = registro_act.querySelector('.wrap-doc-identidad');
+
         if (tipoPersona.selectedIndex == "1") {
             camara_comercio.classList.remove('input-required');
             rep_legal.classList.remove('input-required');
@@ -44,6 +51,15 @@ const formReg = () => {
             camara_comercio.style.display = "none";
             rep_legal.style.display = "none";
             titulo_registro.innerText = "Documentos de registro - Persona natural";
+
+            // Cambio en registro actualizacion
+            camara_comercio_act.classList.remove('input-required');
+            rep_legal_act.classList.remove('input-required');
+
+            doc_identidad_act.style.display ="flex";
+            camara_comercio_act.style.display = "none";
+            rep_legal_act.style.display = "none";
+            titulo_registro_act.innerText = "Documentos de registro - Persona natural";
         } else {
             camara_comercio.classList.add('input-required');
             rep_legal.classList.add('input-required');
@@ -52,6 +68,15 @@ const formReg = () => {
             camara_comercio.style.display = "flex";
             rep_legal.style.display = "flex";
             titulo_registro.innerText = "Documentos de registro - Persona jurídica";
+
+            // Cambio en registro actualizacion
+            camara_comercio_act.classList.add('input-required');
+            rep_legal_act.classList.add('input-required');
+
+            doc_identidad_act.style.display ="none";
+            camara_comercio_act.style.display = "flex";
+            rep_legal_act.style.display = "flex";
+            titulo_registro_act.innerText = "Documentos de registro - Persona jurídica";
 
         }
 
