@@ -72,6 +72,8 @@ export const completeFields = (form_step, fields) => {
   for (const field of sel_fields) {
     let fieldName = field.tagName.toLowerCase();
 
+    
+
     if (fieldName == "input") {
       let fieldType = field.getAttribute("type");
       if (fieldType == "text" || fieldType == "number") {
@@ -93,6 +95,7 @@ export const completeFields = (form_step, fields) => {
 
     if (fieldName == "select") {
       let selectVal = field.options[field.selectedIndex].value;
+      console.log(selectVal)
       if (!selectVal) {
         setErrorFor(field, "Debe completar este campo");
         return false;
