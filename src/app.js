@@ -18,11 +18,16 @@ import "./styles/main.sass";
 import "./static/add-doc.svg";
 import "./static/update-doc.svg";
 import "./static/logo-superbid.svg";
+import "./static/logo_superbid_nova_marca_purple.svg";
 import "./static/agenda.png";
 import "./static/garantia.png";
 import "./static/checked-dollar-01.png";
 import "./static/icon-doc-updRecurso.svg";
 import "./static/rolling-1s-200px.gif";
+import "./static/money-dollar-circle-line.svg";
+import "./static/calendar-2-line.svg";
+import "./static/file.png";
+import "./static/favicon-superbid.png";
 
 
 AOS.init();

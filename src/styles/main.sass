@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap')
 @import "~aos/src/sass/aos.scss"
 /*Edit Bootstrap Variables*/
-$primary: #EA6012
-$secondary: #01499F
-$success: #019F79
+$primary: #FA6400
+$secondary: #BE00FF
+$success: #BE00FF
 
 @import "~bootstrap/scss/bootstrap"
 
@@ -19,8 +19,9 @@ $success: #019F79
 .sb-header
     .nav-link
         color: white
+        transition: .3s
         &:hover
-            color: $primary !important
+            opacity: .7
 
 h1
     @include titleHead($color: #fff, $t-transform: uppercase)
@@ -28,6 +29,11 @@ h1
 
 .sb-intro
     max-height: 720px
+    // background-color: #e6e7e8
+    &__box
+       background-color: #e6e7e8
+       margin-top: 5rem
+       border-radius: 20px
     .sb-desc
         color: white
         opacity: .9
@@ -42,7 +48,8 @@ h1
             font-size: 1.5em
             line-height: 0
     .sb-title
-        font-size: 1.5em
+        font-size: 2em
+        color: $secondary
 
 .sb-box-instruct
     background-color: rgba(#000, .2)
@@ -71,8 +78,10 @@ h1
         
 
 .sb-top-footer
+    background: #111111
     .nav-link
         color: white
+        transition: .3s
         &:hover
             color: $primary
 
@@ -83,10 +92,13 @@ h1
         opacity: .7
         font-size: .8em
 
+.sb-top-footer img
+    max-width: 200px
+
 .sb-content
     .icon-check
         font-size: 10em
-        color: #019F79
+        color: $secondary
     .icon-error
         font-size: 10em
         color: $danger
@@ -108,4 +120,7 @@ h1
             font-size: .9em
         h5
             font-size: 1em
-// Botones Garantía
+// Header
+.sb-nav-brand img
+    max-width: 170px
+    width: 100%
